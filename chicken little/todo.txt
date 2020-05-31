@@ -1,0 +1,37 @@
+
+Chicken Little Coder Todo List
+------------------------------
+[Updated 10-12-2000]
+
+----------------------------------------------------------------------------------
+News 10-12-2000:
+
+ I decided to start fresh since most or all of the things listed in the old TODO
+ had actually been completed, or very nearly so.  Now we get to list things in
+ the order we want to do them, and not the order they have to be done in (for
+ competition, etc).
+
+ I'm actually going to try to keep this file open as I work and list changes as
+ I make them.  I have no idea how successful this idea will be, but alas I shall
+ give it a try... :)
+
+ - Air
+----------------------------------------------------------------------------------
+
+General:
+
+-/- Configuration (ini) file stuff.
+
+-/- User profile stuff.  Tracking statistics is something that a lot of people
+    find quite addictive, and our puzzle game is no exception.
+
+Gameplay:
+
+-/- Tutorial
+
+-/- Win/lose sequences improvied
+
+-/- Birdies dump indicator
+
+-/- Top Scores list
+

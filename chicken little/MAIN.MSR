@@ -1,0 +1,18 @@
+
+          MEASURE Data Table for Files in:  main.c
+
+FILE NAME            EXT   PDIR  STMT   NCNB    BLK   TEXT   TOTAL BLK CMT 
+  SUBPROGRAM    CMP  CMP   LINES  LOC    LOC    LOC   CMTS   LINES  %   %  PBS
+
+main.c
+  main            5    5     0     20     30     15      3     47   33   9 yes
+  global/file     0    0     1      0      2      3      1      6   60  33
+    file-total:   5    5     1     20     32     18      4     53   36  11
+
+
+
+The following possible metric weaknesses were found:
+
+TEXT COMMENTS <  10%    9%  in file main.c for function main
+LINES > 80 CHARS        1   in file main.c for function main
+

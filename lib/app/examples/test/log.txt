@@ -1,0 +1,5 @@
+Video > Initializing DivEnt DirectDraw 3 driver.
+dx3 Says > prebuf = 0   align = 1 
+dx3 Says > width = 640  height = 480  bytew = 2560
+dx3 Says > prebuf = 0   align = 1 
+dx3 Says > width = 640  height = 480  bytew = 2560

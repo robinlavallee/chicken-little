@@ -1,0 +1,55 @@
+
+          MEASURE Data Table for Files in:  main.c
+
+FILE NAME            EXT   PDIR  STMT   NCNB    BLK   TEXT   TOTAL BLK CMT 
+  SUBPROGRAM    CMP  CMP   LINES  LOC    LOC    LOC   CMTS   LINES  %   %  PBS
+
+main.c
+  mmerr           1    1     0      4      5      0      0      5    0   0
+  OnReset         1    1     0     21     22     11      6     40   33  21
+  OnAbout         1    1     0      3      4      0      0      4    0   0 yes
+  AboutProc       6    6     0     13     24      4      1     31   14   4 yes
+  OnExit          1    1     0      3      4      0      0      4    0   0
+  OnSwitchModes   2    2     0     11     13      2     11     25   13  45
+  OnDisplayChan   2    2     0      5      7      1      0      8   12   0 yes
+  BEGIN_MESSAGE   6    8     0     11     18     10      4     31   35  18 yes
+  Renderer        2    2     0      5      6      7      6     21   53  50
+  SurfaceChange   7    7     0     22     28     15      9     54   34  24 yes
+  Main            1    1     0     31     31     20     12     66   39  27
+  DisplayEggs    11   11     0     19     28     12      8     48   30  22 yes
+  DoGameWork      3    3     0     10     13      3      0     16   18   0 yes
+  GetPlayerInpu  20   21     0     55     79     24     28    126   23  26 yes
+  global/file     0    0    10      9     41     28     17    109   39  29 yes
+    file-total:  64   67    10    222    323    137    102    588   29  24
+
+
+
+The following possible metric weaknesses were found:
+
+LINES > 80 CHARS        1   in file main.c for function OnAbout
+
+TEXT COMMENTS <  10%    4%  in file main.c for function AboutProc
+EXIT ROUTES >  1        3   in file main.c for function AboutProc
+
+TEXT COMMENTS <  10%    0%  in file main.c for function OnDisplayChange
+
+RETURNS IMPROPER TYPE       in file main.c for function BEGIN_MESSAGE_MAP
+EXIT ROUTES >  1        2   in file main.c for function BEGIN_MESSAGE_MAP
+LINES > 80 CHARS        2   in file main.c for function BEGIN_MESSAGE_MAP
+
+EXIT ROUTES >  1        2   in file main.c for function SurfaceChange
+LINES > 80 CHARS        1   in file main.c for function SurfaceChange
+
+COMPLEXITY >  10       11   in file main.c for void function DisplayEggs
+LINES > 80 CHARS        4   in file main.c for void function DisplayEggs
+
+TEXT COMMENTS <  10%    0%  in file main.c for void function DoGameWork
+
+COMPLEXITY >  10       20   in file main.c for void function GetPlayerInput
+EXTD COMPLEXITY > 15   21   in file main.c for void function GetPlayerInput
+EX STATEMENTS >  50    55   in file main.c for void function GetPlayerInput
+LINES > 80 CHARS       17   in file main.c for void function GetPlayerInput
+
+TEXT COMMENTS <  50%   29%  in file main.c for file level global/file
+LINES > 80 CHARS       28   in file main.c for file level global/file
+

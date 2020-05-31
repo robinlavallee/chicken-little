@@ -1,0 +1,467 @@
+
+          MEASURE Data Table for Files in:  list
+
+FILE NAME            EXT   PDIR  STMT   NCNB    BLK   TEXT   TOTAL BLK CMT 
+  SUBPROGRAM    CMP  CMP   LINES  LOC    LOC    LOC   CMTS   LINES  %   %  PBS
+
+main.c
+  mmerr           1    1     0      2      3      0      2      5    0  40
+  OnReset         1    1     0     21     22     15      6     44   40  21
+  AboutProc       6    6     0     13     24      3      0     27   11   0 yes
+  OnAbout         1    1     0      3      4      0      0      4    0   0
+  OnExit          1    1     0      3      4      0      0      4    0   0
+  OnSwitchModes   2    2     0     11     13      2     11     25   13  45 yes
+  OnDisplayChan   2    2     0      5      7      1      0      8   12   0 yes
+  BEGIN_MESSAGE   3    3     0     16     20     10      6     36   33  23 yes
+  DoGameWork      9   10     0     23     28      8      5     41   22  15
+  GetPlayerInpu  22   24     0     59     89     24     33    136   21  27 yes
+  GameLoop        6    8     0     11     18     10      4     31   35  18 yes
+  GetOpponent     2    2     0      3      6      0      2      7    0  25 yes
+  Main            2    2     0     32     33     22     13     71   40  28
+  global/file     0    0     5      7     34     38     29    129   52  46 yes
+    file-total:  58   63     5    209    305    133    111    568   30  26
+gameplay.c
+  IsMatchablePa   5    8     0      6      7      4      0     11   36   0 yes
+  IsPerfectMatc   2    2     0      3      4      1      1      6   20  20 yes
+  GP_IsInert      6    6     0      8     15      2      2     17   11  11 yes
+  MatchRecurse   13   17     0     21     42      5      4     47   10   8 yes
+  BrownMatchRec  13   17     0     21     42      5      4     47   10   8 yes
+  GP_FindMatch   15   15     0     42     63     21      6     93   25   8 yes
+  GetRelativeLi   4    4     0      9     16      3      4     25   15  20 yes
+  GP_CheckDown    7    9     0     21     29     12      7     47   29  19 yes
+  GP_CheckLeft    9   15     0     11     19      4      2     23   17   9 yes
+  GP_CheckRight   9   15     0     11     19      4      0     23   17   0 yes
+  GP_CheckTurn    9   11     0     24     32     15      5     50   31  13 yes
+  GP_ResetPlayF   2    2     0      5      7      1      0      8   12   0 yes
+  GP_Solidify     6    6     0     12     20      6      4     31   23  16
+  GP_MoveTurn     2    2     0      4      7      1      1      8   12  12
+  GP_FindOneMin  12   12     0     31     49     20     18     79   28  26 yes
+  GP_FindHeight   4    4     0      7     12      4      1     19   25   7 yes
+  GP_FindNumAbo   1    1     0      2      3      1      3      6   25  50 yes
+  global/file     0    0     3      2     34     37     60    170   50  63 yes
+    file-total: 119  146     3    240    420    146    122    710   25  22
+state.c
+  _state_setsta   1    1     0      2      3      1      2      6   25  40
+  _state_update   6    7     0     10     16      3      0     19   15   0 yes
+  _gpstate_sets   3    3     0      4      7      1      2     10   12  22 yes
+  _gpstate_rema   1    1     0      4      5      2      0      7   28   0
+  _gpstate_upda  10   10     0     21     33     10      5     48   23  13 yes
+  global/file     0    0     1      2      8     13      8     42   61  50 yes
+    file-total:  21   22     1     43     72     30     17    132   29  19
+ai.c
+  AI_Init         1    1     0      9     10      4      9     25   28  47
+  AI_Input        1    1     0      7      8      1      1     12   11  11 yes
+  AI_Think        9    9     0     43     70     13     25    106   15  26 yes
+
+
+          MEASURE Data Table (continued)
+
+FILE NAME            EXT   PDIR  STMT   NCNB    BLK   TEXT   TOTAL BLK CMT 
+  SUBPROGRAM    CMP  CMP   LINES  LOC    LOC    LOC   CMTS   LINES  %   %  PBS
+
+  AI_GetDecisio   1    1     0      3      4      1      2      9   20  33
+  AI_DoMove       7    7     0     18     39      5      9     53   11  18 yes
+  AI_Cleanup      1    1     0      1      2      0      2      6    0  50 yes
+  AI_Find2Color   5    7     0      7     14      4      4     22   22  22 yes
+  AI_Find1Color   4    4     0      6     11      3      2     16   21  15 yes
+  MatchColor      3    4     0      4      6      3      2      9   33  25 yes
+  global/file     0    0     1      1     11     12      5     34   52  31 yes
+    file-total:  32   35     1     99    175     46     61    292   20  25
+eggs.c
+  Egg_StateHand   6    6     0     12     20      9      5     34   31  20 yes
+  ChocEgg_State   1    1     0      1      2      4      4     11   66  66
+  Egg_LoadResou   4    4     0     16     19     13      3     39   40  13 yes
+  ChocEgg_LoadR   3    3     0     13     15      9      2     28   37  11 yes
+  Egg_IsInert     1    1     0      2      3      0      0      3    0   0
+  global/file     0    0     2      9     46     25     29    113   35  38 yes
+    file-total:  15   15     2     53    105     60     43    228   36  29
+player.c
+  GetPiece        6    6     0     20     28      4      3     33   12   9 yes
+  GetNextPiece    1    1     0      6      7      3      1     11   30  12 yes
+  GetInitialPie   2    2     0      5      7      2      0      9   22   0 yes
+  PlayerState    13   14     0     69     93     55     62    195   37  40 yes
+  Player_Initia   1    1     0     10     11      5      4     19   31  26
+  global/file     0    0    12      0     17     24     17     74   56  50 yes
+    file-total:  23   24    12    110    163     93     87    341   35  34
+random.c
+  rand_getbit     2    2     0      7      9      0      0      9    0   0 yes
+  rand_setseed    2    2     0      4      5      1      0      6   16   0
+  rand_getlong    2    2     0      5      7      2      0      9   22   0 yes
+  getbit          2    2     0      7      9      0      0      9    0   0 yes
+  drand_create    1    1     0      5      6      3      0      9   33   0 yes
+  drand_setseed   3    3     0      6      8      2      0     10   20   0 yes
+  drand_getlong   2    2     0      5      7      2      0      9   22   0 yes
+  drand_free      2    2     0      2      3      0      0      3    0   0
+  drand_reset     1    1     0      2      3      0      0      3    0   0
+  global/file     0    0     8      1     18     23     19     78   56  51
+    file-total:  17   17     8     44     75     33     19    145   30  20
+loadres.c
+  CL_OpenResour   2    2     0      6      7      3      0     10   30   0 yes
+  CL_CloseResou   2    2     0      3      4      0      0      4    0   0
+  CL_LoadAnimat   3    4     0      7      9      4      0     13   30   0 yes
+  CL_UnloadAnim   4    5     0      7     10      2      0     12   16   0 yes
+  global/file     0    0     2      0      6     13     15     47   66  71 yes
+    file-total:  11   13     2     23     36     22     15     86   36  29
+gamepi~1.c
+  GamePiece_Sta  12   14     0     32     46     26     20     91   36  30 yes
+  GamePiece_Loa   3    4     0      7     10      3      0     13   23   0 yes
+  GamePiece_Unl   3    3     0      5      7      3      0     10   30   0 yes
+  GamePiece_Ini   2    2     0      8      9      3      1     12   25  10 yes
+
+
+          MEASURE Data Table (continued)
+
+FILE NAME            EXT   PDIR  STMT   NCNB    BLK   TEXT   TOTAL BLK CMT 
+  SUBPROGRAM    CMP  CMP   LINES  LOC    LOC    LOC   CMTS   LINES  %   %  PBS
+
+  GamePiece_Mov   1    1     0      4      5      1      1      7   16  16
+  global/file     0    0     3      2     16     20     21     71   52  56 yes
+    file-total:  21   24     3     58     93     56     43    204   36  31
+stone.c
+  Stone_StateHa  13   13     0     19     32     25     12     68   43  27 yes
+  Stone_LoadRes   2    2     0     14     16     10      4     34   38  20 yes
+  Stone_IsInert   1    3     0      2      3      0      0      3    0   0 yes
+  global/file     0    0     2      2     17     13      7     44   43  29 yes
+    file-total:  16   18     2     37     68     48     23    149   41  25
+physics.c
+  InitPhysics     2    2     0      6      8      4      2     14   33  20 yes
+  AddLinearCart   6    9     0     14     25     10     10     43   28  28 yes
+  AddLinearVect   2    2     0     15     17      5      2     26   22  10 yes
+  LinkListAdd     3    3     0     17     22      5      0     27   18   0 yes
+  FindFreeHandl   3    3     0      7     12      2      1     14   14   7 yes
+  RetrievePosit   8    8     0     20     31     11      9     52   26  22 yes
+  FindAnimation   3    3     0      7     11      3      0     14   21   0 yes
+  Deg2Rad         1    1     0      2      3      0      0      3    0   0
+  Rad2Deg         1    1     0      2      3      0      0      3    0   0
+  KillAnimate     5    5     0     21     35      7      8     49   16  18
+  global/file     0    0     3      3     16     16      5     40   44  23 yes
+    file-total:  34   37     3    114    183     63     37    285   24  16
+pieced~1.c
+  DumpCount       2    2     0      6      9      3      2     14   25  18
+  GetDumpPiece    5    5     0     17     29      7     16     43   19  35 yes
+  ThrowPiecesFi  10   10     0     33     51     11     22     75   17  30 yes
+  Attack          3    3     0     10     15      9     13     37   37  46 yes
+  global/file     0    0     3      0      7     17      3     35   66  30 yes
+    file-total:  20   20     3     66    111     47     56    204   28  33
+animat~1.c
+  Anim_Active     2    2     0      2      3      0      0      3    0   0
+  Anim_Blitter    3    5     2      4      8      1      0      9   11   0 yes
+  Anim_Update     5    7     0     13     18      4      1     23   18   5 yes
+  Anim_SetSeque   2    3     0      5      7      1      0      8   12   0 yes
+  Anim_Translat   1    1     0      3      4      0      0      4    0   0
+  Anim_Translat   1    1     0      3      4      0      0      4    0   0
+  Anim_GetTrans   1    1     0      2      3      0      0      3    0   0
+  Anim_GetTrans   1    1     0      2      3      0      0      3    0   0
+  Anim_SetTrans   1    1     0      2      3      0      0      3    0   0
+  Anim_SetTrans   1    1     0      2      3      0      0      3    0   0
+  global/file     0    0     3      0     13     27     30     93   66  69 yes
+    file-total:  18   23     5     38     69     33     31    156   31  31
+
+  TOTALS:       405  457    50   1134   1875    810    665   3500   29  26
+
+
+
+
+Some Additional Total Counts (not reported above):
+
+  Statement-Terminating Semicolons
+     Declarative  :    29
+
+  Noncomment, Nonblank (NCNB) Lines of Code
+     Declarative  :   243
+     Executable   :  1632
+
+  Inline Comments 
+     With Text    :   108
+     Without Text :     0
+
+  Full-Line Comment 
+     With Text    :   557
+     Without Text :   258
+
+
+
+             A L L   F I L E S   C O M P L E X I T Y   R E P O R T
+
+Average Cyclomatic Complexity          4
+Average Extended Complexity            5
+Average Executable Statements         11
+Total Cyclomatic Complexity          405
+Total Extended Complexity            457
+Total Executable Statements         1105
+Total Executable Modules              99
+Files Opened                          13
+
+
+                A L L   M O D U L E S   R E P O R T
+
+Functions                             58
+Void Functions                        41
+"main" Programs                        0
+
+
+               A L L   F I L E S   D E T A I L   R E P O R T
+
+Defined Macros                         0
+C Structs                              2
+For Loops                             44
+While loops                            8
+Do...While loops                       1
+Ifs                                  208
+Cases                                 42
+Switches                              12
+Returns                              137
+Improper Returns                       0
+Exits                                  0
+Aborts                                 0
+Asserts                                7
+Continues                              3
+Gotos                                  0
+Misc. C++ Features Found: 
+  Templates                            0
+  Throws                               0
+  Catches                              0
+  Operator Overloading Functions       0
+  Assembler Sections                   0
+  Double-Slash Comments              724
+
+
+NOTE:   No C++ Class Features Found
+
+
+
+
+
+The following possible metric weaknesses were found:
+
+TEXT COMMENTS <  10%    0%  in file main.c for function AboutProc
+EXIT ROUTES >  1        3   in file main.c for function AboutProc
+LINES > 80 CHARS        1   in file main.c for function AboutProc
+
+LINES > 80 CHARS        1   in file main.c for function OnSwitchModes
+
+TEXT COMMENTS <  10%    0%  in file main.c for function OnDisplayChange
+LINES > 80 CHARS        1   in file main.c for function OnDisplayChange
+
+EXIT ROUTES >  1        2   in file main.c for function BEGIN_MESSAGE_MAP
+LINES > 80 CHARS        4   in file main.c for function BEGIN_MESSAGE_MAP
+
+COMPLEXITY >  10       22   in file main.c for void function GetPlayerInput
+EXTD COMPLEXITY > 15   24   in file main.c for void function GetPlayerInput
+EX STATEMENTS >  50    59   in file main.c for void function GetPlayerInput
+LINES > 80 CHARS       26   in file main.c for void function GetPlayerInput
+
+EXIT ROUTES >  1        2   in file main.c for void function GameLoop
+LINES > 80 CHARS        2   in file main.c for void function GameLoop
+
+EXIT ROUTES >  1        2   in file main.c for function GetOpponent
+
+TEXT COMMENTS <  50%   46%  in file main.c for file level global/file
+LINES > 80 CHARS       33   in file main.c for file level global/file
+
+TEXT COMMENTS <  10%    0%  in file gameplay.c for function IsMatchablePair
+EXIT ROUTES >  1        5   in file gameplay.c for function IsMatchablePair
+
+EXIT ROUTES >  1        2   in file gameplay.c for function IsPerfectMatch
+
+EXIT ROUTES >  1        3   in file gameplay.c for function GP_IsInert
+LINES > 80 CHARS        2   in file gameplay.c for function GP_IsInert
+
+TEXT COMMENTS <  10%    8%  in file gameplay.c for function MatchRecurse
+COMPLEXITY >  10       13   in file gameplay.c for function MatchRecurse
+EXTD COMPLEXITY > 15   17   in file gameplay.c for function MatchRecurse
+LINES > 80 CHARS        8   in file gameplay.c for function MatchRecurse
+
+TEXT COMMENTS <  10%    8%  in file gameplay.c for function BrownMatchRecurse
+COMPLEXITY >  10       13   in file gameplay.c for function BrownMatchRecurse
+EXTD COMPLEXITY > 15   17   in file gameplay.c for function BrownMatchRecurse
+LINES > 80 CHARS        8   in file gameplay.c for function BrownMatchRecurse
+
+TEXT COMMENTS <  10%    8%  in file gameplay.c for function GP_FindMatch
+COMPLEXITY >  10       15   in file gameplay.c for function GP_FindMatch
+CONTINUES PRESENT       2   in file gameplay.c for function GP_FindMatch
+LINES > 80 CHARS        4   in file gameplay.c for function GP_FindMatch
+
+LINES > 80 CHARS        1   in file gameplay.c for void function GetRelativeLine
+
+EXIT ROUTES >  1        3   in file gameplay.c for function GP_CheckDown
+LINES > 80 CHARS        2   in file gameplay.c for function GP_CheckDown
+
+TEXT COMMENTS <  10%    9%  in file gameplay.c for function GP_CheckLeft
+EXIT ROUTES >  1        5   in file gameplay.c for function GP_CheckLeft
+LINES > 80 CHARS        4   in file gameplay.c for function GP_CheckLeft
+
+TEXT COMMENTS <  10%    0%  in file gameplay.c for function GP_CheckRight
+EXIT ROUTES >  1        5   in file gameplay.c for function GP_CheckRight
+LINES > 80 CHARS        6   in file gameplay.c for function GP_CheckRight
+
+EXIT ROUTES >  1        4   in file gameplay.c for function GP_CheckTurn
+LINES > 80 CHARS        1   in file gameplay.c for function GP_CheckTurn
+
+TEXT COMMENTS <  10%    0%  in file gameplay.c for void function GP_ResetPlayFie
+                            ld
+
+COMPLEXITY >  10       12   in file gameplay.c for void function GP_FindOneMinim
+                            umHeight
+EXIT ROUTES >  1        3   in file gameplay.c for void function GP_FindOneMinim
+                            umHeight
+LINES > 80 CHARS        1   in file gameplay.c for void function GP_FindOneMinim
+                            umHeight
+
+TEXT COMMENTS <  10%    7%  in file gameplay.c for function GP_FindHeight
+EXIT ROUTES >  1        3   in file gameplay.c for function GP_FindHeight
+
+LINES > 80 CHARS        1   in file gameplay.c for function GP_FindNumAbove
+
+LINES > 80 CHARS       42   in file gameplay.c for file level global/file
+
+TEXT COMMENTS <  10%    0%  in file state.c for function _state_update
+
+LINES > 80 CHARS        1   in file state.c for void function _gpstate_setstate
+
+LINES > 80 CHARS        2   in file state.c for function _gpstate_update
+
+LINES > 80 CHARS       10   in file state.c for file level global/file
+
+LINES > 80 CHARS        1   in file ai.c for void function AI_Input
+
+LINES > 80 CHARS       10   in file ai.c for void function AI_Think
+
+EXIT ROUTES >  1        7   in file ai.c for function AI_DoMove
+LINES > 80 CHARS        1   in file ai.c for function AI_DoMove
+
+LINES > 80 CHARS        1   in file ai.c for void function AI_Cleanup
+
+EXIT ROUTES >  1        3   in file ai.c for function AI_Find2Colors
+LINES > 80 CHARS        2   in file ai.c for function AI_Find2Colors
+
+EXIT ROUTES >  1        3   in file ai.c for function AI_Find1Color
+
+EXIT ROUTES >  1        3   in file ai.c for function MatchColor
+LINES > 80 CHARS        2   in file ai.c for function MatchColor
+
+TEXT COMMENTS <  50%   31%  in file ai.c for file level global/file
+LINES > 80 CHARS        3   in file ai.c for file level global/file
+
+EXIT ROUTES >  1        3   in file eggs.c for function Egg_StateHandler
+LINES > 80 CHARS        2   in file eggs.c for function Egg_StateHandler
+
+LINES > 80 CHARS        5   in file eggs.c for function Egg_LoadResources
+
+LINES > 80 CHARS        6   in file eggs.c for function ChocEgg_LoadResources
+
+TEXT COMMENTS <  50%   38%  in file eggs.c for file level global/file
+LINES > 80 CHARS       19   in file eggs.c for file level global/file
+
+TEXT COMMENTS <  10%    9%  in file player.c for void function GetPiece
+LINES > 80 CHARS        2   in file player.c for void function GetPiece
+
+LINES > 80 CHARS        1   in file player.c for void function GetNextPiece
+
+TEXT COMMENTS <  10%    0%  in file player.c for void function GetInitialPieces
+
+COMPLEXITY >  10       13   in file player.c for function PlayerState
+EX STATEMENTS >  50    69   in file player.c for function PlayerState
+EXIT ROUTES >  1       11   in file player.c for function PlayerState
+LINES > 80 CHARS       20   in file player.c for function PlayerState
+
+LINES > 80 CHARS        6   in file player.c for file level global/file
+
+TEXT COMMENTS <  10%    0%  in file random.c for function rand_getbit
+EXIT ROUTES >  1        2   in file random.c for function rand_getbit
+
+TEXT COMMENTS <  10%    0%  in file random.c for function rand_getlong
+
+TEXT COMMENTS <  10%    0%  in file random.c for function getbit
+EXIT ROUTES >  1        2   in file random.c for function getbit
+
+TEXT COMMENTS <  10%    0%  in file random.c for function drand_create
+
+TEXT COMMENTS <  10%    0%  in file random.c for void function drand_setseed
+
+TEXT COMMENTS <  10%    0%  in file random.c for function drand_getlong
+
+TEXT COMMENTS <  10%    0%  in file loadres.c for function CL_OpenResource
+EXIT ROUTES >  1        2   in file loadres.c for function CL_OpenResource
+
+TEXT COMMENTS <  10%    0%  in file loadres.c for function CL_LoadAnimation
+EXIT ROUTES >  1        2   in file loadres.c for function CL_LoadAnimation
+
+TEXT COMMENTS <  10%    0%  in file loadres.c for void function CL_UnloadAnimati
+                            on
+
+LINES > 80 CHARS       15   in file loadres.c for file level global/file
+
+COMPLEXITY >  10       12   in file gamepi~1.c for function GamePiece_StateHandl
+                            er
+EXIT ROUTES >  1        3   in file gamepi~1.c for function GamePiece_StateHandl
+                            er
+LINES > 80 CHARS        9   in file gamepi~1.c for function GamePiece_StateHandl
+                            er
+
+TEXT COMMENTS <  10%    0%  in file gamepi~1.c for function GamePiece_LoadResour
+                            ces
+
+TEXT COMMENTS <  10%    0%  in file gamepi~1.c for void function GamePiece_Unloa
+                            dResources
+
+LINES > 80 CHARS        1   in file gamepi~1.c for void function GamePiece_Initi
+                            alize
+
+LINES > 80 CHARS       26   in file gamepi~1.c for file level global/file
+
+COMPLEXITY >  10       13   in file stone.c for function Stone_StateHandler
+EXIT ROUTES >  1        2   in file stone.c for function Stone_StateHandler
+LINES > 80 CHARS        8   in file stone.c for function Stone_StateHandler
+
+LINES > 80 CHARS        6   in file stone.c for function Stone_LoadResources
+
+LINES > 80 CHARS        1   in file stone.c for function Stone_IsInert
+
+TEXT COMMENTS <  50%   29%  in file stone.c for file level global/file
+LINES > 80 CHARS        6   in file stone.c for file level global/file
+
+LINES > 80 CHARS        1   in file physics.c for void function InitPhysics
+
+EXIT ROUTES >  1        2   in file physics.c for function AddLinearCartesian
+LINES > 80 CHARS        1   in file physics.c for function AddLinearCartesian
+
+EXIT ROUTES >  1        2   in file physics.c for function AddLinearVector
+
+TEXT COMMENTS <  10%    0%  in file physics.c for void function LinkListAdd
+
+TEXT COMMENTS <  10%    7%  in file physics.c for function FindFreeHandle
+EXIT ROUTES >  1        2   in file physics.c for function FindFreeHandle
+
+EXIT ROUTES >  1        7   in file physics.c for function RetrievePosition
+LINES > 80 CHARS        2   in file physics.c for function RetrievePosition
+
+TEXT COMMENTS <  10%    0%  in file physics.c for function FindAnimation
+EXIT ROUTES >  1        2   in file physics.c for function FindAnimation
+
+TEXT COMMENTS <  50%   23%  in file physics.c for file level global/file
+LINES > 80 CHARS        2   in file physics.c for file level global/file
+
+EXIT ROUTES >  1        3   in file pieced~1.c for function GetDumpPiece
+LINES > 80 CHARS        2   in file pieced~1.c for function GetDumpPiece
+
+CONTINUES PRESENT       1   in file pieced~1.c for void function ThrowPiecesFill
+                            Struct
+LINES > 80 CHARS        1   in file pieced~1.c for void function ThrowPiecesFill
+                            Struct
+
+LINES > 80 CHARS        2   in file pieced~1.c for void function Attack
+
+TEXT COMMENTS <  50%   30%  in file pieced~1.c for file level global/file
+LINES > 80 CHARS        8   in file pieced~1.c for file level global/file
+
+TEXT COMMENTS <  10%    0%  in file animat~1.c for void function Anim_Blitter
+LINES > 80 CHARS        1   in file animat~1.c for void function Anim_Blitter
+
+TEXT COMMENTS <  10%    5%  in file animat~1.c for void function Anim_Update
+
+TEXT COMMENTS <  10%    0%  in file animat~1.c for void function Anim_SetSequenc
+                            e
+
+LINES > 80 CHARS       29   in file animat~1.c for file level global/file
+

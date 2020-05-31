@@ -1,0 +1,66 @@
+﻿cl : Command line warning D9035: option 'Gm' has been deprecated and will be removed in a future release
+  mmio.c
+c:\g\code1999\contest\chicken little backup\contest\lib\mmio\src\mmio.c(99): warning C4267: 'function': conversion from 'size_t' to 'UWORD', possible loss of data
+c:\g\code1999\contest\chicken little backup\contest\lib\mmio\src\mmio.c(133): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(208): note: see declaration of 'fopen'
+c:\g\code1999\contest\chicken little backup\contest\lib\mmio\src\mmio.c(137): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1774): note: see declaration of 'sprintf'
+c:\g\code1999\contest\chicken little backup\contest\lib\mmio\src\mmio.c(211): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(208): note: see declaration of 'fopen'
+c:\g\code1999\contest\chicken little backup\contest\lib\mmio\src\mmio.c(322): warning C4333: '>>': right shift by too large amount, data loss
+c:\g\code1999\contest\chicken little backup\contest\lib\mmio\src\mmio.c(332): warning C4333: '>>': right shift by too large amount, data loss
+c:\g\code1999\contest\chicken little backup\contest\lib\mmio\src\mmio.c(337): warning C4333: '>>': right shift by too large amount, data loss
+c:\g\code1999\contest\chicken little backup\contest\lib\mmio\src\mmio.c(342): warning C4333: '>>': right shift by too large amount, data loss
+c:\g\code1999\contest\chicken little backup\contest\lib\mmio\src\mmio.c(352): warning C4333: '>>': right shift by too large amount, data loss
+c:\g\code1999\contest\chicken little backup\contest\lib\mmio\src\mmio.c(357): warning C4333: '>>': right shift by too large amount, data loss
+c:\g\code1999\contest\chicken little backup\contest\lib\mmio\src\mmio.c(439): warning C4333: '>>': right shift by too large amount, data loss
+c:\g\code1999\contest\chicken little backup\contest\lib\mmio\src\mmio.c(440): warning C4333: '>>': right shift by too large amount, data loss
+c:\g\code1999\contest\chicken little backup\contest\lib\mmio\src\mmio.c(441): warning C4333: '>>': right shift by too large amount, data loss
+c:\g\code1999\contest\chicken little backup\contest\lib\mmio\src\mmio.c(442): warning C4333: '>>': right shift by too large amount, data loss
+  mmerror.c
+  mmcopy.c
+c:\g\code1999\contest\chicken little backup\contest\lib\mmio\src\mmcopy.c(45): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\string.h(133): note: see declaration of 'strcpy'
+  mmalloc.c
+  log.c
+c:\g\code1999\contest\chicken little backup\contest\lib\mmio\src\log.c(75): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\string.h(133): note: see declaration of 'strcpy'
+c:\g\code1999\contest\chicken little backup\contest\lib\mmio\src\log.c(76): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\string.h(133): note: see declaration of 'strcpy'
+c:\g\code1999\contest\chicken little backup\contest\lib\mmio\src\log.c(127): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1469): note: see declaration of 'vsprintf'
+c:\g\code1999\contest\chicken little backup\contest\lib\mmio\src\log.c(150): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1469): note: see declaration of 'vsprintf'
+  loadcfg.c
+c:\g\code1999\contest\chicken little backup\contest\lib\mmio\src\loadcfg.c(272): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\string.h(133): note: see declaration of 'strcpy'
+c:\g\code1999\contest\chicken little backup\contest\lib\mmio\src\loadcfg.c(290): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\string.h(133): note: see declaration of 'strcpy'
+c:\g\code1999\contest\chicken little backup\contest\lib\mmio\src\loadcfg.c(292): warning C4996: 'strlwr': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strlwr. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\string.h(555): note: see declaration of 'strlwr'
+c:\g\code1999\contest\chicken little backup\contest\lib\mmio\src\loadcfg.c(332): warning C4996: 'strlwr': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strlwr. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\string.h(555): note: see declaration of 'strlwr'
+c:\g\code1999\contest\chicken little backup\contest\lib\mmio\src\loadcfg.c(387): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\string.h(133): note: see declaration of 'strcpy'
+c:\g\code1999\contest\chicken little backup\contest\lib\mmio\src\loadcfg.c(453): warning C4996: 'strlwr': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strlwr. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\string.h(555): note: see declaration of 'strlwr'
+c:\g\code1999\contest\chicken little backup\contest\lib\mmio\src\loadcfg.c(485): warning C4996: 'strlwr': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strlwr. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\string.h(555): note: see declaration of 'strlwr'
+c:\g\code1999\contest\chicken little backup\contest\lib\mmio\src\loadcfg.c(510): warning C4996: 'strdup': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strdup. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\string.h(536): note: see declaration of 'strdup'
+c:\g\code1999\contest\chicken little backup\contest\lib\mmio\src\loadcfg.c(538): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\string.h(133): note: see declaration of 'strcpy'
+c:\g\code1999\contest\chicken little backup\contest\lib\mmio\src\loadcfg.c(539): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\string.h(90): note: see declaration of 'strcat'
+c:\g\code1999\contest\chicken little backup\contest\lib\mmio\src\loadcfg.c(540): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\string.h(90): note: see declaration of 'strcat'
+c:\g\code1999\contest\chicken little backup\contest\lib\mmio\src\loadcfg.c(541): warning C4996: 'strdup': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strdup. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\string.h(536): note: see declaration of 'strdup'
+c:\g\code1999\contest\chicken little backup\contest\lib\mmio\src\loadcfg.c(563): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\string.h(133): note: see declaration of 'strcpy'
+c:\g\code1999\contest\chicken little backup\contest\lib\mmio\src\loadcfg.c(564): warning C4996: 'strdup': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strdup. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\string.h(536): note: see declaration of 'strdup'
+c:\g\code1999\contest\chicken little backup\contest\lib\mmio\src\loadcfg.c(582): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(208): note: see declaration of 'fopen'
+  Generating Code...
+  mmio.vcxproj -> C:\g\code1999\contest\chicken little backup\contest\lib\mmio\.\Debug\mmio.lib

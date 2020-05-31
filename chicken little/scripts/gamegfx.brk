@@ -1,0 +1,365 @@
+
+# Chicken Little Graphics Resource Script
+# By Jake Stine of Divine Entertainment
+#
+# This (currently) generates all the resources for the entirety that is Chicken
+# Little.  It will likely stay that way since I do not forsee myself splitting
+# it up into smaller multiple scripts anytime soon.
+#
+# Table of Contents [Update me!]:
+#  - Eggs
+#  - EggCrack
+#  - EggBreak
+
+[global]
+
+DestImage    = ..\Release\gamegfx
+HeaderFile   = ..\include\clgfxres.h
+
+# most of the ripping is from eggs.pcx for now.
+SourceImage  = ..\resources\gfx\eggs.pcx
+
+SpriteWidth  = 30
+SpriteHeight = 30
+HorizBuffer  = 0
+VertBuffer   = 0
+
+Opacity           = funky
+BlendType         = none
+TransparencyRed   = 0
+TransparencyGreen = 255
+TransparencyBlue  = 255
+
+# ========================================================================
+#  BACKGROUNDS and LAYOUTS (and now the title screen)
+# ========================================================================
+
+# ========================================================================
+[global:Title]
+# ========================================================================
+Opacity      = opaque
+ImportMode   = whole
+
+[Main]
+SourceImage  = ..\resources\gfx\title_01.pcx
+
+[Soft]
+SourceImage  = ..\resources\gfx\title_02.pcx
+
+
+# ========================================================================
+[global:Layout]
+# ========================================================================
+ImportMode   = whole            # import the entire image (ignores all other vert/horiz params)
+
+[Type_A]
+SourceImage  = ..\resources\gfx\board.pcx
+
+
+# ========================================================================
+[global:Background]
+# ========================================================================
+Opacity      = opaque
+ImportMode   = whole            # import the entire image (ignores all other vert/horiz params)
+
+[Type_A]       # Dark Clouds!
+SourceImage  = ..\resources\gfx\backdrops\clouds_03.pcx
+
+[Type_B]       # Turkey Lurkey
+SourceImage  = ..\resources\gfx\backdrops\turkey.pcx
+
+
+
+# ========================================================================
+#  FONTS / FONTS / FONTS
+# ========================================================================
+
+# ========================================================================
+[global:MainFont]
+# ========================================================================
+
+VertStart    = 0
+HorizStart   = 0
+NumImages    = 48
+
+[Big]
+SourceImage  = ..\resources\gfx\fonts\main.pcx
+SpriteWidth  = 49
+SpriteHeight = 49
+
+[Small]
+# The current small font is alternating widths of 24 and 25.  This is be-
+# cause it is exactly 50% of the big font which is an odd-number width.
+
+SourceImage  = ..\resources\gfx\fonts\main_small.pcx
+SpriteWidth  = 24
+SpriteHeight = 24
+ImportMode      = alternating
+AlternateWidth  = 25
+
+# ========================================================================
+[global:ScoreFont]
+# ========================================================================
+
+VertStart    = 1
+HorizStart   = 1
+HorizBuffer  = 2
+NumImages    = 12
+SpriteWidth  = 8
+SpriteHeight = 16
+Opacity      = opaque
+
+[Normal]
+SourceImage  = ..\resources\gfx\fonts\score.pcx
+
+
+
+# ========================================================================
+[global:Egg]
+# ========================================================================
+HorizStart   = 60
+NumImages    = 1
+
+[White]
+VertStart = 150
+
+[Blue]
+VertStart = 0
+
+[Pink]
+VertStart = 30
+
+[Green]
+VertStart = 60
+
+[Gold]
+VertStart = 90
+
+# ========================================================================
+[global:Chaos]
+# ========================================================================
+HorizStart   = 60
+NumImages    = 1
+
+[Red]
+VertStart = 180
+
+[Blue]
+VertStart = 210
+
+[Green]
+VertStart = 240
+
+
+# ========================================================================
+[global:EggCrack]
+# ========================================================================
+
+HorizStart   = 90
+NumImages    = 3
+
+[White]
+VertStart = 150
+
+[Blue]
+VertStart = 0
+
+[Pink]
+VertStart = 30
+
+[Green]
+VertStart = 60
+
+[Gold]
+VertStart = 90
+
+
+# ========================================================================
+[global:EggCrumble]
+# ========================================================================
+
+HorizStart   = 210
+NumImages    = 4
+
+[White]
+VertStart = 150
+
+[Blue]
+VertStart = 0
+
+[Pink]
+VertStart = 30
+
+[Green]
+VertStart = 60
+
+[Gold]
+VertStart = 90
+
+
+# ========================================================================
+[global:ChaosBlip]
+# ========================================================================
+# The brown egg blip sequence.
+
+HorizStart   = 120
+NumImages    = 10
+
+[Red]
+VertStart = 180
+
+[Blue]
+VertStart = 210
+
+[Green]
+VertStart = 240
+
+
+# ========================================================================
+[global:Stone]
+# ========================================================================
+NumImages = 1
+VertStart = 300
+
+[Waiting]
+HorizStart = 60
+
+[Crack1]
+HorizStart = 90
+
+[Crack2]
+HorizStart = 120
+
+[Crumble]
+HorizStart = 180
+NumImages  = 8
+
+
+# ========================================================================
+[global:Meteor]
+# ========================================================================
+NumImages = 1
+VertStart = 330
+
+[Waiting]
+HorizStart = 60
+
+[Crumble]
+HorizStart = 90
+NumImages  = 8
+
+
+# ========================================================================
+[global:Outline]
+# ========================================================================
+HorizStart   = 0
+NumImages    = 1
+
+#[White]
+#HorizStart = 0
+
+[Blue]
+VertStart = 0
+
+[Pink]
+VertStart = 30
+
+[Green]
+VertStart = 60
+
+[Gold]
+VertStart = 90
+
+[White]
+VertStart = 150
+
+[Chaos]
+VertStart = 180
+
+[Stone]
+VertStart = 300
+
+
+# ========================================================================
+#  ICONIZED EGG RESOURCES
+# ========================================================================
+# I have separated these out in this section so that I avoid having to
+# frequently reload eggc.pcx and icons.pcx.  This'll keep ripping times
+# lower.  Which is good. :)
+
+# ========================================================================
+[global:Icon]
+# ========================================================================
+VertStart    = 0
+NumImages    = 1
+SourceImage  = ..\resources\gfx\icons.pcx
+SpriteWidth  = 16
+SpriteHeight = 16
+
+[White]
+HorizStart = 0
+
+[Blue]
+HorizStart = 16
+
+[Pink]
+HorizStart = 32
+
+[Green]
+HorizStart = 48
+
+[Gold]
+HorizStart = 64
+
+[ChaosRed]
+HorizStart = 80
+
+[ChaosBlue]
+HorizStart = 96
+
+[ChaosGreen]
+HorizStart = 112
+
+[Stone]
+HorizStart = 128
+
+
+# ========================================================================
+#    Portraits!
+# ========================================================================
+[global:Portrait]
+ImportMode   = whole
+
+[Chicken]
+SourceImage  = ..\resources\gfx\portraits\chicken01.pcx
+
+[Goosey]
+SourceImage  = ..\resources\gfx\portraits\goosey01.pcx
+
+[Turkey]
+SourceImage  = ..\resources\gfx\portraits\turkey01.pcx
+
+# ========================================================================
+#    BIRDIES (RED and BLUE baby)
+# ========================================================================
+
+# ========================================================================
+#[global:Birdies]
+# ========================================================================
+#HorizStart   = 0
+#NumImages    = 16
+#SourceImage  = ..\resources\gfx\birdies.pcx
+#SpriteWidth  = 24
+#SpriteHeight = 24
+
+#[BlueRight]
+#VertStart = 0
+
+#[BlueLeft]
+#VertStart = 24
+
+#[RedRight]
+#VertStart = 48
+
+#[RedLeft]
+#VertStart = 72

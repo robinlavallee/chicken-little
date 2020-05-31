@@ -1,0 +1,260 @@
+Artificial Intelligence
+
+
+Combo building :
+
+Here are notes about how the AI should try to do combo.
+
+The first goal is to try to achieve a "near match". 
+A near match is a serie of 3 eggs of the same type
+next to each other.
+
+I deferentiate between "reachable near match"
+and "unreachable near match". A reachable near
+match is a match that can be done by placing an egg
+type on it. (So that it makes 4 and matches). On
+the opposite, a unreachable near match is a serie
+of 3 eggs that cannot be matched because they are
+blocked by other eggs (or the game border).
+
+Let's use this 5 by 5 gamefield for examples :
+
+
+(reachable near match for '2')
++--+--+--+--+
+|  |  |  |22|
++--+--+--+--+
+|  |  |  |22|
++--+--+--+--+
+|  |  |11|33|
++--+--+--+--+
+|22|22|22|44|
++--+--+--+--+
+
+(Unreachable near match for '2' and reachable near match for '1')
++--+--+--+--+
+|  |  |  |22|
++--+--+--+--+
+|  |  |  |22|
++--+--+--+--+
+|11|11|11|33|
++--+--+--+--+
+|22|22|22|44|
++--+--+--+--+
+
+
+The AI must first create a near match, there are 6 possible near matches patterns :
+
+     (1)           (2)
++--+--+--+--+--+ +--+--+--+--+--+
+|  |  |  |  |  | |  |  |  |  |  |
++--+--+--+--+--+ +--+--+--+--+--+
+|  |  |XX|  |  | |  |  |  |  |  |
++--+--+--+--+--+ +--+--+--+--+--+
+|  |  |XX|  |  | |  |  |  |  |  |
++--+--+--+--+--+ +--+--+--+--+--+
+|  |  |XX|  |  | |  |XX|XX|XX|  |
++--+--+--+--+--+ +--+--+--+--+--+
+
+     (3)           (4)
++--+--+--+--+--+ +--+--+--+--+--+
+|  |  |  |  |  | |  |  |  |  |  |
++--+--+--+--+--+ +--+--+--+--+--+
+|  |  |  |  |  | |  |  |  |  |  |
++--+--+--+--+--+ +--+--+--+--+--+
+|  |XX|XX|  |  | |  |XX|XX|  |  |
++--+--+--+--+--+ +--+--+--+--+--+
+|  |XX|  |  |  | |  |  |XX|  |  |
++--+--+--+--+--+ +--+--+--+--+--+
+
+     (5)           (6)
++--+--+--+--+--+ +--+--+--+--+--+
+|  |  |  |  |  | |  |  |  |  |  |
++--+--+--+--+--+ +--+--+--+--+--+
+|  |  |  |  |  | |  |  |  |  |  |
++--+--+--+--+--+ +--+--+--+--+--+
+|  |  |XX|  |  | |  |XX|  |  |  |
++--+--+--+--+--+ +--+--+--+--+--+
+|  |XX|XX|  |  | |  |XX|XX|  |  |
++--+--+--+--+--+ +--+--+--+--+--+
+
+It should be noted that pattern 3 and 4 makes sense only when a piece
+is supporting. They have been deliberately not shown.
+
+Each of these patterns have combo prepation moves. Here are the combo
+preparations for pattern 1 :
+
+      (1a)             (1b)
++--+--+--+--+--+ +--+--+--+--+--+
+|  |  |XX|  |  | |  |  |  |  |  |
++--+--+--+--+--+ +--+--+--+--+--+
+|  |  |  |  |  | |  |XX|  |  |  |
++--+--+--+--+--+ +--+--+--+--+--+
+|  |  |XX|  |  | |  |  |XX|  |  |
++--+--+--+--+--+ +--+--+--+--+--+
+|  |  |XX|  |  | |  |  |XX|  |  |
++--+--+--+--+--+ +--+--+--+--+--+
+|  |  |XX|  |  | |  |  |XX|  |  |
++--+--+--+--+--+ +--+--+--+--+--+
+
+      (1c)
++--+--+--+--+--+ 
+|  |  |  |  |  | 
++--+--+--+--+--+ 
+|  |  |  |XX|  | 
++--+--+--+--+--+ 
+|  |  |XX|  |  | 
++--+--+--+--+--+ 
+|  |  |XX|  |  | 
++--+--+--+--+--+ 
+|  |  |XX|  |  | 
++--+--+--+--+--+ 
+
+
+As with patterns, it is assumed something must hold the floating XX into the air.
+The floating XX can be also made to float higher.
+
+Once we have such a pattern, the pieces are said to be "combo prepared".
+It is just a matter of doing a match under the floating piece to make
+the combo happens.
+
+Such pieces are usually flagged as "combo prepared" by the AI to forbid
+the AI to directly make them match. (Unless a critical "about to die" situation
+arises).
+
+One can easily see how these combo patterns can be made into structure.
+Structure which the AI will look and mask against the play field to find ones, then
+it will check for possible moves related to the pattern in the structure, and if so
+it will do it.
+
+If this plan works, then it will be trivial to add other patterns for more weird pattern
+of combo.
+
+For now, the following near match pattern have this number of combo preparation
+
+Pattern #    Num of combo preparation
+1		        3		
+2				5	
+3				4
+4				4
+5				4
+6				4
+
+This for a total of 24.
+
+
+So roughly here are the steps the AI will take to create combo.
+
+1. Look for near match pattern (using the structure), 
+   if one is found, make sure it is reachable and make sure it is not combo prepared.
+   If you can't find one, play a move that will create such a reachable pattern.
+2. Once the pattern is found, look into structure for combo preparation. Try all of them
+   to see if you can make one to work. If you can't, too bad, look for other near match
+   pattern.
+   
+All these steps also need to take into account stones and take care to not break up things
+during the preparation of the combo.
+
+
+
+-------------
+
+The following data structure for near match combo preparation is going to be used.
+They will either be loaded from a file, or probably hard coded.
+
+typedef struct NEARMATCH
+{
+	int x[2];
+	int y[2];
+	int nCombo;
+	COMBOPREPARATION cp[5]; 
+} NEARMATCH;
+
+// Where X and Y are actually the displacement for the other pieces.
+For example, for pattern 1, we have the following :
+
+x[0] = 0
+y[0] = 1
+x[1] = 0
+y[1] = 2
+
+That is, for pattern one we arbitrary set the origin to be the top piece,
+it could be done otherwise.
+
+For combo preparation, the place where to put the piece is also related
+toward the origin.
+
+typedef struct COMBOPREPARTION
+{
+  int x, y;
+} COMBOPREPARATION;
+
+So for pattern 1 :
+
+cp[0].x = 0
+cp[0].y = -2
+
+cp[1].x = 1
+cp[1].y = -1
+
+cp[2].x = -1
+cp[2].y = -1
+
+
+It should be noted that the y is the minimum height the piece needs to be. 
+It would actually also work if the piece was placed above.
+
+
+So using these structures, the AI should be able to scan through the field, look
+for patterns, try to find combo preparation, and it should make the code neat
+clean and rather efficient.
+
+
+----
+
+With further thought (and coding) it seems that combo preparation alone
+is not the answer as it creates too many 'ifs' yet.
+
+Of course, the goal is still to achieve 1a and 1b, and 1c, but to achieve
+these goals, the surrounding area must be checked to make sure it can accomplish
+the goal.
+
+So here I'm going to list all the subpart of combo preparation 1a)
+
+Legends : EE = Must be empty
+		  CE = Conditional empty : One of the CE must be empty
+		  PP = Must have a piece.
+		  XX = Near match type.
+		  YY = Piece that is falling but not same color as near match.
+
+We assume that the central piece that is falling is of type XX. 
+If it is not the case, then we just have to reverse POS_ABOVE
+for POS_BELOW and vice versa.
+
+For POS_LEFT, we change it to POS_RIGHT and do x+1
+FOR POS_RIGHT, we change it to POS_LEFT and do x-1
+
+
+1 a) --> 1st way.
+x = origin
+pos = POS_ABOVE
+Empty:			- (x, y-1)
+				- (x, y-2)
+
+Cond. Empty:    - (x+1, y-1)
+				- (x-1, y-1)
+
++--+--+--+--+--+		+--+--+--+--+--+ 
+|  |  |EE|  |  |		|  |  |XX|  |  | 
++--+--+--+--+--+		+--+--+--+--+--+ 
+|  |CE|EE|CE|  |		|  |CE|YY|CE|  | 
++--+--+--+--+--+		+--+--+--+--+--+ 
+|  |  |XX|  |  |  -->	|  |  |XX|  |  | 
++--+--+--+--+--+		+--+--+--+--+--+ 
+|  |  |XX|  |  |		|  |  |XX|  |  | 
++--+--+--+--+--+		+--+--+--+--+--+ 
+|  |  |XX|  |  |		|  |  |XX|  |  | 
++--+--+--+--+--+		+--+--+--+--+--+ 
+
+
+

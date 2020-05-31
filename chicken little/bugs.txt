@@ -1,0 +1,22 @@
+
+
+Definition of bugs :
+
+A major bug is a bug that makes the program crash, or make
+the game totaly unplayable. They are first priority.
+
+A minor bug is a bug that makes the game give wrongful
+results or alter the gameplay a little. (Wrong score, bad
+display, etc). 
+
+
+Major Bug list :
+
+1. Game doesn't seem to run at all (or awfully) on some ATI video cards.
+
+
+Minor bug list :
+
+1.
+
+   

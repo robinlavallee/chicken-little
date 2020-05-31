@@ -1,0 +1,30 @@
+Mikmod > virtch > Entering Initialization Sequence.
+Mikmod > virtch > Initialization successful!
+Video > Initializing DivEnt DirectDraw 3 driver.
+Vdriver > Video Modeset Successful!
+        > xres: 640  yres: 480  bytespp: 4
+Left over entity: TextInfo
+Left over entity: TextInfo
+Left over entity: Title
+Player >  Deinitialization...
+ > Freeing channel controller effect memory.
+ > Done!
+AI : Reachable NearMatch was found at position (6, 12) of type 5
+Found combo preparation type 0 for position (5, 10)
+Placing it directly
+Found combo preparation type 1 for position (6, 9)
+Using the empty space below
+Player >  Deinitialization...
+ > Freeing channel controller effect memory.
+ > Done!
+Left over entity: Title
+Player >  Deinitialization...
+ > Freeing channel controller effect memory.
+ > Done!
+Player >  Deinitialization...
+ > Freeing channel controller effect memory.
+ > Done!
+Left over entity: Title
+Player >  Deinitialization...
+ > Freeing channel controller effect memory.
+ > Done!

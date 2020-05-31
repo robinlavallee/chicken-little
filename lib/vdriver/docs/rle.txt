@@ -1,0 +1,90 @@
+------------------------------
+[ The Funky Blitter Routines ]
+------------------------------
+
+By Jake Stine and Divine Entertainment
+
+If anyone has any questions or comments about this text, feel free to
+drop me a line.  I can be contacted the following ways:
+
+  e-mail:  air@divent.org
+  ICQ:     2320014
+
+  Or check the Divine Entertainment website:
+    http://www.divent.org
+
+--------------------
+
+ The Funky blits (for lack of a better name - because clearly this one is so
+ good!) are blits for a nifty graphics storage style that will greatly improve
+ the blit speed of sprites and tiles that have large runs of transparent
+ pixels.  In addition it removes any need for an actual transparent colorkey,
+ which can be a convinence in itself.
+
+ Notice that the format has been adjusted to try to allow better use of dword
+ alignment.  I use drows in several places where a size-constrained format
+ would use bytes.  This greatly enhances overall performance.
+ 
+
+ the sprite is viewed as a stream, read as such:
+
+nextscan:
+    [Begin New Scanline]
+	read a dword  -->  this first byte is a flag byte only.
+                      bit 0 indicates whether the first run is trans-
+                      parent or opaque.
+                      bit 1 indicates if there are multiple runs or not.
+					  bit 2 flags the 'use colorkey compare' rule for this
+					        scanline (applicable if bits 0 and 1 are clear)
+
+    if bit 1 is set
+       copy a full scan of data
+       skip to next scan [goto nextscan]
+    else
+	   complete run with no type change, so check type:
+	   if bit 0 is set it is a complete transparent run
+          skip it [goto nextscan]
+	   else
+          if bit 2 is set
+             do a colorkey blit
+          else
+             do a fast n' dumb opaque blit.
+
+    else if bit 0 is set transparent run starts
+       goto transrun
+    else
+       goto opaquerun
+
+opaquerun:
+    read the next dword --> this is the run length (in pixels)
+    if runlength is zero then
+       jump to the next scan line [goto nextscan].
+       check scan counter, exit if done
+    else
+       read and copy the proceeding runlen bytes to vidmem
+       goto transrun
+
+transrun:
+    read the next dword --> this is the run length (in pixels)
+    add runlen value to the current x location
+    goto opaquerun
+
+ I doubt this is really anything new, but I think it's pretty spiffy all the
+ same.  Naturally, this method would not be best under all circumstances
+ (say, a mesh-type sprite, where there are many transparent and opaque runs
+ per line, or a situation where scaling / rotations are needed) which is why
+ I recommend you do some threshold testing during the conversion process to
+ determine if using this or sticking with a simple colorkey blit would be
+ better.
+  
+ This method could also be used for an alpha or additive blend layer sprite.
+ Simply replace the opaque run blits with the appropriate alpha or additive
+ blitter, and you have yourself an ultra-fast and easy-to-use layer sprite
+ system which can be efficiently used for things such as a silohette outline
+ of an exceptionally large sprite with no adverse overhead.
+
+ Notes about 16 bit:
+  - Opaque runs should be all padded to a dword alignment.  Unfortunately you
+    still need to copy via words since the remainder word, if present, would
+    corrupt the imagine, but it does keep all other runs in the scan aligned
+    which is important in itself!

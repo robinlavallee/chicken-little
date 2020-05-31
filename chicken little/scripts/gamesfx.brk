@@ -1,0 +1,85 @@
+# Chicken Little Audio Resource Script
+# By Jake Stine of Divine Entertainment
+#
+# This generates all the sound effects and music resources for the entirety that is 
+# Chicken Little.  It will likely stay that way since I do not forsee myself splitting
+# it up into smaller multiple scripts anytime soon.
+#
+# Table of Contents [Update me!]:
+
+[global]
+
+DestImage    = ..\Release\gamesfx
+HeaderFile   = ..\include\clsfxres.h
+
+# ============================================================================
+[global:Announcer]
+# ============================================================================
+ResourceType = sndfx
+
+[GetReady]
+SourceImage  = ..\resources\sounds\announcer\getready.wav
+
+[Go]
+SourceImage  = ..\resources\sounds\announcer\go.wav
+
+[Win]
+SourceImage  = ..\resources\sounds\announcer\youwin.wav
+
+[Lose]
+SourceImage  = ..\resources\sounds\announcer\youlose.wav
+
+# ============================================================================
+[global:Egg]
+# ============================================================================
+ResourceType = sndfx
+
+[Crack]
+SourceImage  = ..\resources\sounds\eggcrack.wav
+
+[Break]
+SourceImage  = ..\resources\sounds\eggcrumble.wav
+
+[Blip]
+SourceImage  = ..\resources\sounds\chaosphase.wav
+
+[Chirp1]
+SourceImage  = ..\resources\sounds\birdie1.wav
+
+[Chirp2]
+SourceImage  = ..\resources\sounds\birdie2.wav
+
+
+# ============================================================================
+[global:GamePiece]
+# ============================================================================
+ResourceType = sndfx
+
+[Rotate]
+SourceImage  = ..\resources\sounds\rotate.wav
+
+[Place]
+SourceImage  = ..\resources\sounds\eggplace.wav
+
+[Thump]
+SourceImage  = ..\resources\sounds\eggplace.wav
+
+# ============================================================================
+[global:Stone]
+# ============================================================================
+ResourceType = sndfx
+
+[Rotate]
+SourceImage  = ..\resources\sounds\stonecrumble.wav
+
+
+# ============================================================================
+[global:Menu]
+# ============================================================================
+ResourceType = sndfx
+
+[Highlight]
+SourceImage  = ..\resources\sounds\menu_highlight.wav
+
+[Select]
+SourceImage  = ..\resources\sounds\menu_select.wav

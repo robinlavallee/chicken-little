@@ -1,0 +1,34 @@
+##########################
+## User settable macros ##
+##########################
+
+Compiler          = wcc386
+Compiler_Options1 = /oineatxrl+ /5r /j /s /zu /I..\include
+Compiler_Options2 = /oineatxrl+ /5r /j /s /I..\include
+#Compiler_Options3 = /5r /j /s /I..\include
+
+Linker_options    =
+
+System            = dos4g
+
+Lib_file          = \lib\vdriver.lib
+
+Object_files      = vdriver.obj &
+		    gfx.obj &
+                    gamegfx.obj
+
+####################
+## Makefile rules ##
+####################
+
+$(Lib_file): $(Object_files)
+    *wlib $(Lib_file) $<
+
+gfx.obj :  gfx.c
+    $(Compiler) $(Compiler_Options2) $<
+
+gamegfx.obj :  gamegfx.c
+    $(Compiler) $(Compiler_Options2) $<
+
+.c.obj:
+		*$(Compiler) $(Compiler_Options1) $<

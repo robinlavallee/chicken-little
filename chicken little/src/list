@@ -1,0 +1,16 @@
+--LIST_OF_FILES:
+main.c
+gameplay.c
+state.c
+ai.c
+eggs.c
+player.c
+random.c
+loadres.c
+gamepi~1.c
+stone.c
+physics.c
+pieced~1.c
+animat~1.c
+
+

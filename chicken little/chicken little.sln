@@ -1,0 +1,71 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.705
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "app", "..\lib\app\app.vcxproj", "{7964A960-4A2B-4817-9DA6-39340C6B55AD}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "chicken little", "chicken little.vcxproj", "{E1EAF326-1520-44F6-9829-1AB16E112CF6}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mikmod", "..\lib\mikmod\mikmod.vcxproj", "{E989C4E4-7B8D-4C05-9A28-296F0D688E38}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mmio", "..\lib\mmio\mmio.vcxproj", "{A6127C4D-B551-4840-A2A1-B2D030552A7A}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "vdriver", "..\lib\vdriver\vdriver.vcxproj", "{3B17DAC2-DE5E-45E7-9D6A-EB852C90AFE5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+		Template|x86 = Template|x86
+		VectorC|x86 = VectorC|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7964A960-4A2B-4817-9DA6-39340C6B55AD}.Debug|x86.ActiveCfg = Debug|Win32
+		{7964A960-4A2B-4817-9DA6-39340C6B55AD}.Debug|x86.Build.0 = Debug|Win32
+		{7964A960-4A2B-4817-9DA6-39340C6B55AD}.Release|x86.ActiveCfg = Release|Win32
+		{7964A960-4A2B-4817-9DA6-39340C6B55AD}.Release|x86.Build.0 = Release|Win32
+		{7964A960-4A2B-4817-9DA6-39340C6B55AD}.Template|x86.ActiveCfg = Release|Win32
+		{7964A960-4A2B-4817-9DA6-39340C6B55AD}.Template|x86.Build.0 = Release|Win32
+		{7964A960-4A2B-4817-9DA6-39340C6B55AD}.VectorC|x86.ActiveCfg = VectorC|Win32
+		{7964A960-4A2B-4817-9DA6-39340C6B55AD}.VectorC|x86.Build.0 = VectorC|Win32
+		{E1EAF326-1520-44F6-9829-1AB16E112CF6}.Debug|x86.ActiveCfg = Debug|Win32
+		{E1EAF326-1520-44F6-9829-1AB16E112CF6}.Debug|x86.Build.0 = Debug|Win32
+		{E1EAF326-1520-44F6-9829-1AB16E112CF6}.Release|x86.ActiveCfg = Release|Win32
+		{E1EAF326-1520-44F6-9829-1AB16E112CF6}.Release|x86.Build.0 = Release|Win32
+		{E1EAF326-1520-44F6-9829-1AB16E112CF6}.Template|x86.ActiveCfg = Template|Win32
+		{E1EAF326-1520-44F6-9829-1AB16E112CF6}.Template|x86.Build.0 = Template|Win32
+		{E1EAF326-1520-44F6-9829-1AB16E112CF6}.VectorC|x86.ActiveCfg = Template|Win32
+		{E1EAF326-1520-44F6-9829-1AB16E112CF6}.VectorC|x86.Build.0 = Template|Win32
+		{E989C4E4-7B8D-4C05-9A28-296F0D688E38}.Debug|x86.ActiveCfg = Debug|Win32
+		{E989C4E4-7B8D-4C05-9A28-296F0D688E38}.Debug|x86.Build.0 = Debug|Win32
+		{E989C4E4-7B8D-4C05-9A28-296F0D688E38}.Release|x86.ActiveCfg = Release|Win32
+		{E989C4E4-7B8D-4C05-9A28-296F0D688E38}.Release|x86.Build.0 = Release|Win32
+		{E989C4E4-7B8D-4C05-9A28-296F0D688E38}.Template|x86.ActiveCfg = Template|Win32
+		{E989C4E4-7B8D-4C05-9A28-296F0D688E38}.Template|x86.Build.0 = Template|Win32
+		{E989C4E4-7B8D-4C05-9A28-296F0D688E38}.VectorC|x86.ActiveCfg = Template|Win32
+		{E989C4E4-7B8D-4C05-9A28-296F0D688E38}.VectorC|x86.Build.0 = Template|Win32
+		{A6127C4D-B551-4840-A2A1-B2D030552A7A}.Debug|x86.ActiveCfg = Debug|Win32
+		{A6127C4D-B551-4840-A2A1-B2D030552A7A}.Debug|x86.Build.0 = Debug|Win32
+		{A6127C4D-B551-4840-A2A1-B2D030552A7A}.Release|x86.ActiveCfg = Release|Win32
+		{A6127C4D-B551-4840-A2A1-B2D030552A7A}.Release|x86.Build.0 = Release|Win32
+		{A6127C4D-B551-4840-A2A1-B2D030552A7A}.Template|x86.ActiveCfg = Template|Win32
+		{A6127C4D-B551-4840-A2A1-B2D030552A7A}.Template|x86.Build.0 = Template|Win32
+		{A6127C4D-B551-4840-A2A1-B2D030552A7A}.VectorC|x86.ActiveCfg = VectorC|Win32
+		{A6127C4D-B551-4840-A2A1-B2D030552A7A}.VectorC|x86.Build.0 = VectorC|Win32
+		{3B17DAC2-DE5E-45E7-9D6A-EB852C90AFE5}.Debug|x86.ActiveCfg = Debug|Win32
+		{3B17DAC2-DE5E-45E7-9D6A-EB852C90AFE5}.Debug|x86.Build.0 = Debug|Win32
+		{3B17DAC2-DE5E-45E7-9D6A-EB852C90AFE5}.Release|x86.ActiveCfg = Release|Win32
+		{3B17DAC2-DE5E-45E7-9D6A-EB852C90AFE5}.Release|x86.Build.0 = Release|Win32
+		{3B17DAC2-DE5E-45E7-9D6A-EB852C90AFE5}.Template|x86.ActiveCfg = Template|Win32
+		{3B17DAC2-DE5E-45E7-9D6A-EB852C90AFE5}.Template|x86.Build.0 = Template|Win32
+		{3B17DAC2-DE5E-45E7-9D6A-EB852C90AFE5}.VectorC|x86.ActiveCfg = VectorC|Win32
+		{3B17DAC2-DE5E-45E7-9D6A-EB852C90AFE5}.VectorC|x86.Build.0 = VectorC|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A7394C37-852F-4187-9AB9-51C109489BA1}
+	EndGlobalSection
+EndGlobal

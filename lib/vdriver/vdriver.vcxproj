@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Template|Win32">
+      <Configuration>Template</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="VectorC|Win32">
+      <Configuration>VectorC</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <SccProjectName />
+    <SccLocalPath />
+    <ProjectGuid>{3B17DAC2-DE5E-45E7-9D6A-EB852C90AFE5}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Template|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='VectorC|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='VectorC|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\lib\</OutDir>
+    <IntDir>.\../temp\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>.\lib\</OutDir>
+    <IntDir>.\../temp/debug\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='VectorC|Win32'">
+    <OutDir>.\lib\</OutDir>
+    <IntDir>.\../temp\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MaxSpeed</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+      <AdditionalIncludeDirectories>$(MMIO)\include;$(VDRIVER)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_LIB;WIN32;NDEBUG;MM_LOG_VERBOSE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\../temp\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\../temp\vdriver.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\../temp\</ObjectFileName>
+      <ProgramDataBaseFileName>.\../temp\</ProgramDataBaseFileName>
+      <StructMemberAlignment>4Bytes</StructMemberAlignment>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\lib\vdriver.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\lib\vdriver.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>Disabled</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <MinimalRebuild>true</MinimalRebuild>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <AdditionalIncludeDirectories>..\mmio\include;include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\../temp/debug\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\../temp/debug\vdriver.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\../temp/debug\</ObjectFileName>
+      <ProgramDataBaseFileName>.\../temp/debug\</ProgramDataBaseFileName>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\lib\vdriver.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>lib\vdriverd.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='VectorC|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MaxSpeed</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level2</WarningLevel>
+      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+      <AdditionalIncludeDirectories>$(MMIO)\include;$(VDRIVER)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\../temp\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\../temp\vdriver.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\../temp\</ObjectFileName>
+      <ProgramDataBaseFileName>.\../temp\</ProgramDataBaseFileName>
+      <AdditionalOptions> $(VECTORC)</AdditionalOptions>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\lib\vdriver.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\lib\vdriver.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="include\image.h" />
+    <ClInclude Include="include\sprite.h" />
+    <ClInclude Include="include\vdfont.h" />
+    <ClInclude Include="include\vdrespak.h" />
+    <ClInclude Include="include\vdriver.h" />
+    <ClInclude Include="src\prims\i386-mmx\spr32add.h" />
+    <ClInclude Include="src\prims\prims.h" />
+    <ClInclude Include="src\prims\spr16add.h" />
+    <ClInclude Include="src\prims\spr16alpha.h" />
+    <ClInclude Include="src\prims\spr32add.h" />
+    <ClInclude Include="src\prims\spr32alpha.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\cvt_rle.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='VectorC|Win32'"> $(VECTORC)  $(VECTORC)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="src\drivers\font50.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='VectorC|Win32'"> $(VECTORC)  $(VECTORC)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="src\drivers\win32\dib.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='VectorC|Win32'"> $(VECTORC)  $(VECTORC)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="src\drivers\win32\dx3.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='VectorC|Win32'"> $(VECTORC)  $(VECTORC)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="src\fontspr.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='VectorC|Win32'"> $(VECTORC)  $(VECTORC)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="src\gamegfx.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='VectorC|Win32'"> $(VECTORC)  $(VECTORC)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="src\gfx.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='VectorC|Win32'"> $(VECTORC)  $(VECTORC)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="src\image.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='VectorC|Win32'"> $(VECTORC)  $(VECTORC)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="src\loadbmp.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='VectorC|Win32'"> $(VECTORC)  $(VECTORC)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="src\loadpcx.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='VectorC|Win32'"> $(VECTORC)  $(VECTORC)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="src\pal_opt.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='VectorC|Win32'"> $(VECTORC)  $(VECTORC)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="src\prims\16-bit.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='VectorC|Win32'"> $(VECTORC)  $(VECTORC)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="src\prims\32-bit.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='VectorC|Win32'"> $(VECTORC)  $(VECTORC)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="src\prims\i386-mmx\spr32add_bgr.c">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\../temp/mmx/</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\..\temp\debug\mmx/</ObjectFileName>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='VectorC|Win32'"> $(VECTORC)  $(VECTORC)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="src\prims\i386-mmx\spr32add_lst.c">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\../temp/mmx/</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\..\temp\debug\mmx/</ObjectFileName>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='VectorC|Win32'"> $(VECTORC)  $(VECTORC)</AdditionalOptions>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='VectorC|Win32'">.\../temp/mmx/</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="src\prims\i386-mmx\spr32add_rgb.c">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\../temp/mmx/</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\..\temp\debug\mmx/</ObjectFileName>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='VectorC|Win32'"> $(VECTORC)  $(VECTORC)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="src\prims\i386-mmx\spr32alpha_bgr.c">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\../temp/mmx/</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\..\temp\debug\mmx/</ObjectFileName>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='VectorC|Win32'"> $(VECTORC)  $(VECTORC)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="src\prims\i386-mmx\spr32alpha_lst.c">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\../temp/mmx/</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\..\temp\debug\mmx/</ObjectFileName>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='VectorC|Win32'"> $(VECTORC)  $(VECTORC)</AdditionalOptions>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='VectorC|Win32'">.\../temp/mmx/</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="src\prims\i386-mmx\spr32alpha_rgb.c">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\../temp/mmx/</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\..\temp\debug\mmx/</ObjectFileName>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='VectorC|Win32'"> $(VECTORC)  $(VECTORC)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="src\prims\rect16.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='VectorC|Win32'"> $(VECTORC)  $(VECTORC)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="src\prims\rect32.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='VectorC|Win32'"> $(VECTORC)  $(VECTORC)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="src\prims\spr16.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='VectorC|Win32'"> $(VECTORC)  $(VECTORC)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="src\prims\spr16add.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='VectorC|Win32'"> $(VECTORC)  $(VECTORC)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="src\prims\spr16add_555.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='VectorC|Win32'"> $(VECTORC)  $(VECTORC)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="src\prims\spr16add_565.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='VectorC|Win32'"> $(VECTORC)  $(VECTORC)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="src\prims\spr16add_lst.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='VectorC|Win32'"> $(VECTORC)  $(VECTORC)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="src\prims\spr16alpha_555.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='VectorC|Win32'"> $(VECTORC)  $(VECTORC)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="src\prims\spr16alpha_565.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='VectorC|Win32'"> $(VECTORC)  $(VECTORC)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="src\prims\spr16alpha_lst.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='VectorC|Win32'"> $(VECTORC)  $(VECTORC)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="src\prims\spr32.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='VectorC|Win32'"> $(VECTORC)  $(VECTORC)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="src\prims\spr32add.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='VectorC|Win32'"> $(VECTORC)  $(VECTORC)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="src\prims\spr32add_bgr.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='VectorC|Win32'"> $(VECTORC)  $(VECTORC)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="src\prims\spr32add_lst.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='VectorC|Win32'"> $(VECTORC)  $(VECTORC)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="src\prims\spr32add_rgb.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='VectorC|Win32'"> $(VECTORC)  $(VECTORC)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="src\prims\spr32alpha_bgr.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='VectorC|Win32'"> $(VECTORC)  $(VECTORC)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="src\prims\spr32alpha_lst.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='VectorC|Win32'"> $(VECTORC)  $(VECTORC)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="src\prims\spr32alpha_rgb.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='VectorC|Win32'"> $(VECTORC)  $(VECTORC)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="src\vdrespak.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='VectorC|Win32'"> $(VECTORC)  $(VECTORC)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="src\vdriver.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='VectorC|Win32'"> $(VECTORC)  $(VECTORC)</AdditionalOptions>
+    </ClCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

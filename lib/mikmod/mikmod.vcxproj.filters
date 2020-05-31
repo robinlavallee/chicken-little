@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4ba553d9-ed0f-43a4-87f4-798f66ed4403}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Virtch">
+      <UniqueIdentifier>{ecc56123-6288-4add-a0fe-cf8b4ca2d4ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Virtch\AsmAPI">
+      <UniqueIdentifier>{5088775b-df49-46b1-b111-b0ac1c35354c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Loaders">
+      <UniqueIdentifier>{510dc507-05b1-4fd3-8367-3a458bf84acf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Drivers">
+      <UniqueIdentifier>{22636ae2-15ce-41a8-a6ad-b55d117dd211}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{7258a050-7373-47c1-9c68-ecaaa59359f5}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Virtch\i386">
+      <UniqueIdentifier>{a319ef0c-3be0-4cc9-9c98-79e824cf95a9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\virtch\asmapi\asmapi.h">
+      <Filter>Source Files\Virtch\AsmAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\virtch\vchcrap.h">
+      <Filter>Source Files\Virtch</Filter>
+    </ClInclude>
+    <ClInclude Include="src\virtch\wrap16.h">
+      <Filter>Source Files\Virtch</Filter>
+    </ClInclude>
+    <ClInclude Include="src\virtch\wrap8.h">
+      <Filter>Source Files\Virtch</Filter>
+    </ClInclude>
+    <ClInclude Include="src\loaders\itshare.h">
+      <Filter>Source Files\Loaders</Filter>
+    </ClInclude>
+    <ClInclude Include="include\mikmod.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\mmtimer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\mplayer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\uniform.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\unisamp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\virtch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\virtch\asmapi\mi16.c">
+      <Filter>Source Files\Virtch\AsmAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\virtch\asmapi\mi8.c">
+      <Filter>Source Files\Virtch\AsmAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\virtch\asmapi\mn16.c">
+      <Filter>Source Files\Virtch\AsmAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\virtch\asmapi\mn8.c">
+      <Filter>Source Files\Virtch\AsmAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\virtch\asmapi\si16.c">
+      <Filter>Source Files\Virtch\AsmAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\virtch\asmapi\si8.c">
+      <Filter>Source Files\Virtch\AsmAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\virtch\asmapi\sn16.c">
+      <Filter>Source Files\Virtch\AsmAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\virtch\asmapi\sn8.c">
+      <Filter>Source Files\Virtch\AsmAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\virtch\nc16.c">
+      <Filter>Source Files\Virtch</Filter>
+    </ClCompile>
+    <ClCompile Include="src\virtch\nc16ss.c">
+      <Filter>Source Files\Virtch</Filter>
+    </ClCompile>
+    <ClCompile Include="src\virtch\nc8.c">
+      <Filter>Source Files\Virtch</Filter>
+    </ClCompile>
+    <ClCompile Include="src\virtch\nc8ss.c">
+      <Filter>Source Files\Virtch</Filter>
+    </ClCompile>
+    <ClCompile Include="src\virtch\vc16.c">
+      <Filter>Source Files\Virtch</Filter>
+    </ClCompile>
+    <ClCompile Include="src\virtch\vc16ss.c">
+      <Filter>Source Files\Virtch</Filter>
+    </ClCompile>
+    <ClCompile Include="src\virtch\vc8.c">
+      <Filter>Source Files\Virtch</Filter>
+    </ClCompile>
+    <ClCompile Include="src\virtch\vc8ss.c">
+      <Filter>Source Files\Virtch</Filter>
+    </ClCompile>
+    <ClCompile Include="src\virtch\virtch.c">
+      <Filter>Source Files\Virtch</Filter>
+    </ClCompile>
+    <ClCompile Include="src\virtch\wrap16.c">
+      <Filter>Source Files\Virtch</Filter>
+    </ClCompile>
+    <ClCompile Include="src\virtch\wrap8.c">
+      <Filter>Source Files\Virtch</Filter>
+    </ClCompile>
+    <ClCompile Include="src\loaders\Load_it.c">
+      <Filter>Source Files\Loaders</Filter>
+    </ClCompile>
+    <ClCompile Include="src\loaders\Load_m15.c">
+      <Filter>Source Files\Loaders</Filter>
+    </ClCompile>
+    <ClCompile Include="src\loaders\Load_mod.c">
+      <Filter>Source Files\Loaders</Filter>
+    </ClCompile>
+    <ClCompile Include="src\loaders\Load_mtm.c">
+      <Filter>Source Files\Loaders</Filter>
+    </ClCompile>
+    <ClCompile Include="src\loaders\Load_s3m.c">
+      <Filter>Source Files\Loaders</Filter>
+    </ClCompile>
+    <ClCompile Include="src\loaders\Load_stm.c">
+      <Filter>Source Files\Loaders</Filter>
+    </ClCompile>
+    <ClCompile Include="src\loaders\Load_xm.c">
+      <Filter>Source Files\Loaders</Filter>
+    </ClCompile>
+    <ClCompile Include="src\loaders\S3m_it.c">
+      <Filter>Source Files\Loaders</Filter>
+    </ClCompile>
+    <ClCompile Include="src\drivers\win32\drv_dx6.c">
+      <Filter>Source Files\Drivers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\drivers\drv_nos.c">
+      <Filter>Source Files\Drivers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\drivers\drv_raw.c">
+      <Filter>Source Files\Drivers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\drivers\drv_wav.c">
+      <Filter>Source Files\Drivers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mdreg.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mdriver.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mloader.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mlreg.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mplayer.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\munitrk.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mwav.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\npertab.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sloader.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\unimod.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\unisamp.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\voiceset.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\virtch\i386\res8ss.asm">
+      <Filter>Source Files\Virtch\i386</Filter>
+    </None>
+    <None Include="src\virtch\i386\res16.asm">
+      <Filter>Source Files\Virtch\i386</Filter>
+    </None>
+    <None Include="src\virtch\i386\res16mmx.asm">
+      <Filter>Source Files\Virtch\i386</Filter>
+    </None>
+    <None Include="src\virtch\i386\res16ss.asm">
+      <Filter>Source Files\Virtch\i386</Filter>
+    </None>
+    <None Include="src\virtch\i386\resample.asm">
+      <Filter>Source Files\Virtch\i386</Filter>
+    </None>
+    <None Include="src\virtch\i386\resmmx.asm">
+      <Filter>Source Files\Virtch\i386</Filter>
+    </None>
+  </ItemGroup>
+</Project>

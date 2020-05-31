@@ -1,0 +1,17 @@
+main.c
+       mmerr ,                         procedure 
+       OnReset ,                       function 
+       OnAbout ,                       function 
+       AboutProc ,                     function 
+       OnExit ,                        function 
+       OnSwitchModes ,                 function 
+       OnDisplayChange ,               function 
+       BEGIN_MESSAGE_MAP ,             function 
+       Renderer ,                      procedure 
+       SurfaceChange ,                 function 
+       Main ,                          function 
+       DisplayEggs ,                   procedure 
+       DoGameWork ,                    procedure 
+       GetPlayerInput ,                procedure 
+   global/file ,                       file level 
+

@@ -1,0 +1,213 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_APPICON             ICON    DISCARDABLE     "icon1.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUT DIALOG DISCARDABLE  120, 120, 267, 149
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About Chicken Little"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,108,121,50,14
+    LTEXT           "Chicken Little - Alpha 1",IDC_STATIC,29,18,100,10
+    GROUPBOX        "Credits",IDC_STATIC,23,32,220,84
+    LTEXT           "Lead Programmer",IDC_STATIC,33,46,58,11
+    LTEXT           "Jake Stine [Air]",IDC_STATIC,131,46,59,9
+    LTEXT           "Additional Programming",IDC_STATIC,33,59,83,11
+    LTEXT           "Robin Lavallée [Lawgiver]",IDC_STATIC,131,60,97,10
+    LTEXT           "Game Design",IDC_STATIC,33,72,73,11
+    LTEXT           "Nathan Youngman [n8]",IDC_STATIC,131,73,93,11
+    LTEXT           "Graphics && Sound",IDC_STATIC,33,86,61,11
+    LTEXT           "Jon Wofford [evilbob]",IDC_STATIC,131,87,85,11
+    PUSHBUTTON      "www.gratisgames.com",IDC_WEBPAGE,157,14,86,14
+    LTEXT           "Additional Music",IDC_STATIC,33,100,61,11
+    LTEXT           "Adam Doub (Isamu)",IDC_STATIC,131,100,85,11
+END
+
+IDD_EXPIRED DIALOG DISCARDABLE  100, 100, 203, 89
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Chicken Little"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,76,64,50,14
+    LTEXT           "Chicken Little - Alpha 1",IDC_STATIC,15,16,80,10
+    PUSHBUTTON      "www.gratisgames.com",IDC_WEBPAGE,102,12,86,14
+    LTEXT           "This version of Chicken Little expired Nov 15, 2000.",
+                    IDC_STATIC,17,36,165,8
+    LTEXT           "Please visit gratisgames.com for the latest version.",
+                    IDC_STATIC,17,46,158,8
+    GROUPBOX        "",IDC_STATIC,13,28,175,30
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 260
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 142
+    END
+
+    IDD_EXPIRED, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 196
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 82
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (Canada) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENC)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_CAN
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_APPMENU MENU DISCARDABLE 
+BEGIN
+    POPUP "&Game"
+    BEGIN
+        MENUITEM SEPARATOR
+        MENUITEM "&Reset",                      IDM_RESET
+        MENUITEM "E&xit",                       IDM_EXIT
+    END
+    POPUP "Video"
+    BEGIN
+        MENUITEM "&Fullscreen\tAlt+Enter",      IDM_SWITCH_MODES
+        MENUITEM SEPARATOR
+        POPUP "Window &Size"
+        BEGIN
+            MENUITEM "Half (320x240)",              ID_VIEW_HALFWINDOW320X240
+
+            MENUITEM "Normal (640x480)",            ID_VIEW_NORMALWINDOW640X480
+            , CHECKED
+            MENUITEM "Large (800x600)",             ID_VIEW_WINDOWSIZE_LARGE800X600
+
+            MENUITEM "Double (1280x960)",           ID_VIEW_DOUBLESIZEWINDOW
+        END
+        MENUITEM SEPARATOR
+        POPUP "Quality"
+        BEGIN
+            MENUITEM "Low (no blending)",           ID_VIDEO_QUALITY_LOWQUALITY
+
+            MENUITEM "High",                        ID_VIDEO_QUALITY_HIGHQUALITY
+            , CHECKED
+        END
+    END
+    POPUP "Audio"
+    BEGIN
+        MENUITEM "&Music",                      ID_AUDIO_MUSIC, CHECKED
+        MENUITEM "&Sound Effects",              ID_AUDIO_SOUNDEFFECTS
+        , CHECKED
+        MENUITEM "&Voices",                     ID_AUDIO_VOICES, CHECKED
+        MENUITEM SEPARATOR
+        POPUP "Quality"
+        BEGIN
+            MENUITEM "Low (11khz)",                 ID_AUDIO_QUALITY_LOW11KHZ
+
+            MENUITEM "Normal (22 khz)",             ID_AUDIO_QUALITY_NORMAL22KHZ
+            , CHECKED
+            MENUITEM "High (44khz)",                ID_AUDIO_QUALITY_HIGH44KHZ
+
+        END
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About...",                   IDM_ABOUT
+    END
+END
+
+#endif    // English (Canada) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

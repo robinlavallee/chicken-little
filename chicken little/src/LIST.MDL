@@ -1,0 +1,138 @@
+main.c
+       mmerr ,                         procedure 
+       OnReset ,                       function 
+       AboutProc ,                     function 
+       OnAbout ,                       function 
+       OnExit ,                        function 
+       OnSwitchModes ,                 function 
+       OnDisplayChange ,               function 
+       BEGIN_MESSAGE_MAP ,             function 
+       DoGameWork ,                    procedure 
+       GetPlayerInput ,                procedure 
+       GameLoop ,                      procedure 
+       GetOpponent ,                   function 
+       Main ,                          function 
+   global/file ,                       file level 
+
+gameplay.c
+       IsMatchablePair ,               function 
+       IsPerfectMatch ,                function 
+       GP_IsInert ,                    function 
+       MatchRecurse ,                  function 
+       BrownMatchRecurse ,             function 
+       GP_FindMatch ,                  function 
+       GetRelativeLine ,               procedure 
+       GP_CheckDown ,                  function 
+       GP_CheckLeft ,                  function 
+       GP_CheckRight ,                 function 
+       GP_CheckTurn ,                  function 
+       GP_ResetPlayField ,             procedure 
+       GP_Solidify ,                   procedure 
+       GP_MoveTurn ,                   procedure 
+       GP_FindOneMinimumHeight ,       procedure 
+       GP_FindHeight ,                 function 
+       GP_FindNumAbove ,               function 
+   global/file ,                       file level 
+
+state.c
+       _state_setstate ,               procedure 
+       _state_update ,                 function 
+       _gpstate_setstate ,             procedure 
+       _gpstate_remap ,                procedure 
+       _gpstate_update ,               function 
+   global/file ,                       file level 
+
+ai.c
+       AI_Init ,                       procedure 
+       AI_Input ,                      procedure 
+       AI_Think ,                      procedure 
+       AI_GetDecision ,                procedure 
+       AI_DoMove ,                     function 
+       AI_Cleanup ,                    procedure 
+       AI_Find2Colors ,                function 
+       AI_Find1Color ,                 function 
+       MatchColor ,                    function 
+   global/file ,                       file level 
+
+eggs.c
+       Egg_StateHandler ,              function 
+       ChocEgg_StateHandler ,          procedure 
+       Egg_LoadResources ,             function 
+       ChocEgg_LoadResources ,         function 
+       Egg_IsInert ,                   function 
+   global/file ,                       file level 
+
+player.c
+       GetPiece ,                      procedure 
+       GetNextPiece ,                  procedure 
+       GetInitialPieces ,              procedure 
+       PlayerState ,                   function 
+       Player_Initialize ,             procedure 
+   global/file ,                       file level 
+
+random.c
+       rand_getbit ,                   function 
+       rand_setseed ,                  procedure 
+       rand_getlong ,                  function 
+       getbit ,                        function 
+       drand_create ,                  function 
+       drand_setseed ,                 procedure 
+       drand_getlong ,                 function 
+       drand_free ,                    procedure 
+       drand_reset ,                   procedure 
+   global/file ,                       file level 
+
+loadres.c
+       CL_OpenResource ,               function 
+       CL_CloseResource ,              procedure 
+       CL_LoadAnimation ,              function 
+       CL_UnloadAnimation ,            procedure 
+   global/file ,                       file level 
+
+gamepi~1.c
+       GamePiece_StateHandler ,        function 
+       GamePiece_LoadResources ,       function 
+       GamePiece_UnloadResources ,     procedure 
+       GamePiece_Initialize ,          procedure 
+       GamePiece_Move ,                procedure 
+   global/file ,                       file level 
+
+stone.c
+       Stone_StateHandler ,            function 
+       Stone_LoadResources ,           function 
+       Stone_IsInert ,                 function 
+   global/file ,                       file level 
+
+physics.c
+       InitPhysics ,                   procedure 
+       AddLinearCartesian ,            function 
+       AddLinearVector ,               function 
+       LinkListAdd ,                   procedure 
+       FindFreeHandle ,                function 
+       RetrievePosition ,              function 
+       FindAnimation ,                 function 
+       Deg2Rad ,                       function 
+       Rad2Deg ,                       function 
+       KillAnimate ,                   procedure 
+   global/file ,                       file level 
+
+pieced~1.c
+       DumpCount ,                     function 
+       GetDumpPiece ,                  function 
+       ThrowPiecesFillStruct ,         procedure 
+       Attack ,                        procedure 
+   global/file ,                       file level 
+
+animat~1.c
+       Anim_Active ,                   function 
+       Anim_Blitter ,                  procedure 
+       Anim_Update ,                   procedure 
+       Anim_SetSequence ,              procedure 
+       Anim_TranslateX ,               function 
+       Anim_TranslateY ,               function 
+       Anim_GetTranslationY ,          function 
+       Anim_GetTranslationX ,          function 
+       Anim_SetTranslationX ,          procedure 
+       Anim_SetTranslationY ,          procedure 
+   global/file ,                       file level 
+

@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{382585a5-45c9-4a0b-8cd6-1a91637ebc7c}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Primatives">
+      <UniqueIdentifier>{beec5ee9-c9ba-48d8-ae22-74fb45a2c195}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Primatives\MMX">
+      <UniqueIdentifier>{a9d001d9-e519-45d1-a401-1e48784e6ca4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Primatives\Sprite16">
+      <UniqueIdentifier>{21253419-d6cf-48b2-9f36-a4134027988c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Primatives\Sprite32">
+      <UniqueIdentifier>{ed6b79bb-fd5f-4aa4-9e25-fa0555adf125}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Drivers">
+      <UniqueIdentifier>{2b6f23a1-c302-4162-be8b-dd12571fdce6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{84529ffb-aaca-4258-a37f-46d89c4c8b2b}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\prims\i386-mmx\spr32add.h">
+      <Filter>Source Files\Primatives\MMX</Filter>
+    </ClInclude>
+    <ClInclude Include="src\prims\spr16add.h">
+      <Filter>Source Files\Primatives\Sprite16</Filter>
+    </ClInclude>
+    <ClInclude Include="src\prims\spr16alpha.h">
+      <Filter>Source Files\Primatives\Sprite16</Filter>
+    </ClInclude>
+    <ClInclude Include="src\prims\spr32add.h">
+      <Filter>Source Files\Primatives\Sprite32</Filter>
+    </ClInclude>
+    <ClInclude Include="src\prims\spr32alpha.h">
+      <Filter>Source Files\Primatives\Sprite32</Filter>
+    </ClInclude>
+    <ClInclude Include="src\prims\prims.h">
+      <Filter>Source Files\Primatives</Filter>
+    </ClInclude>
+    <ClInclude Include="include\image.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\sprite.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\vdfont.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\vdrespak.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\vdriver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\prims\i386-mmx\spr32add_bgr.c">
+      <Filter>Source Files\Primatives\MMX</Filter>
+    </ClCompile>
+    <ClCompile Include="src\prims\i386-mmx\spr32add_lst.c">
+      <Filter>Source Files\Primatives\MMX</Filter>
+    </ClCompile>
+    <ClCompile Include="src\prims\i386-mmx\spr32add_rgb.c">
+      <Filter>Source Files\Primatives\MMX</Filter>
+    </ClCompile>
+    <ClCompile Include="src\prims\i386-mmx\spr32alpha_bgr.c">
+      <Filter>Source Files\Primatives\MMX</Filter>
+    </ClCompile>
+    <ClCompile Include="src\prims\i386-mmx\spr32alpha_lst.c">
+      <Filter>Source Files\Primatives\MMX</Filter>
+    </ClCompile>
+    <ClCompile Include="src\prims\i386-mmx\spr32alpha_rgb.c">
+      <Filter>Source Files\Primatives\MMX</Filter>
+    </ClCompile>
+    <ClCompile Include="src\prims\spr16.c">
+      <Filter>Source Files\Primatives\Sprite16</Filter>
+    </ClCompile>
+    <ClCompile Include="src\prims\spr16add.c">
+      <Filter>Source Files\Primatives\Sprite16</Filter>
+    </ClCompile>
+    <ClCompile Include="src\prims\spr16add_555.c">
+      <Filter>Source Files\Primatives\Sprite16</Filter>
+    </ClCompile>
+    <ClCompile Include="src\prims\spr16add_565.c">
+      <Filter>Source Files\Primatives\Sprite16</Filter>
+    </ClCompile>
+    <ClCompile Include="src\prims\spr16add_lst.c">
+      <Filter>Source Files\Primatives\Sprite16</Filter>
+    </ClCompile>
+    <ClCompile Include="src\prims\spr16alpha_555.c">
+      <Filter>Source Files\Primatives\Sprite16</Filter>
+    </ClCompile>
+    <ClCompile Include="src\prims\spr16alpha_565.c">
+      <Filter>Source Files\Primatives\Sprite16</Filter>
+    </ClCompile>
+    <ClCompile Include="src\prims\spr16alpha_lst.c">
+      <Filter>Source Files\Primatives\Sprite16</Filter>
+    </ClCompile>
+    <ClCompile Include="src\prims\spr32.c">
+      <Filter>Source Files\Primatives\Sprite32</Filter>
+    </ClCompile>
+    <ClCompile Include="src\prims\spr32add.c">
+      <Filter>Source Files\Primatives\Sprite32</Filter>
+    </ClCompile>
+    <ClCompile Include="src\prims\spr32add_bgr.c">
+      <Filter>Source Files\Primatives\Sprite32</Filter>
+    </ClCompile>
+    <ClCompile Include="src\prims\spr32add_lst.c">
+      <Filter>Source Files\Primatives\Sprite32</Filter>
+    </ClCompile>
+    <ClCompile Include="src\prims\spr32add_rgb.c">
+      <Filter>Source Files\Primatives\Sprite32</Filter>
+    </ClCompile>
+    <ClCompile Include="src\prims\spr32alpha_bgr.c">
+      <Filter>Source Files\Primatives\Sprite32</Filter>
+    </ClCompile>
+    <ClCompile Include="src\prims\spr32alpha_lst.c">
+      <Filter>Source Files\Primatives\Sprite32</Filter>
+    </ClCompile>
+    <ClCompile Include="src\prims\spr32alpha_rgb.c">
+      <Filter>Source Files\Primatives\Sprite32</Filter>
+    </ClCompile>
+    <ClCompile Include="src\prims\16-bit.c">
+      <Filter>Source Files\Primatives</Filter>
+    </ClCompile>
+    <ClCompile Include="src\prims\32-bit.c">
+      <Filter>Source Files\Primatives</Filter>
+    </ClCompile>
+    <ClCompile Include="src\prims\rect16.c">
+      <Filter>Source Files\Primatives</Filter>
+    </ClCompile>
+    <ClCompile Include="src\prims\rect32.c">
+      <Filter>Source Files\Primatives</Filter>
+    </ClCompile>
+    <ClCompile Include="src\drivers\win32\dib.c">
+      <Filter>Source Files\Drivers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\drivers\win32\dx3.c">
+      <Filter>Source Files\Drivers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\drivers\font50.c">
+      <Filter>Source Files\Drivers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cvt_rle.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\fontspr.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gamegfx.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gfx.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\image.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\loadbmp.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\loadpcx.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pal_opt.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\vdrespak.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\vdriver.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
