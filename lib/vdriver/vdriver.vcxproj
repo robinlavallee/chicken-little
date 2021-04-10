@@ -218,9 +218,6 @@
     <ClCompile Include="src\loadpcx.c">
       <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='VectorC|Win32'"> $(VECTORC)  $(VECTORC)</AdditionalOptions>
     </ClCompile>
-    <ClCompile Include="src\pal_opt.c">
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='VectorC|Win32'"> $(VECTORC)  $(VECTORC)</AdditionalOptions>
-    </ClCompile>
     <ClCompile Include="src\prims\16-bit.c">
       <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='VectorC|Win32'"> $(VECTORC)  $(VECTORC)</AdditionalOptions>
     </ClCompile>

@@ -3,6 +3,9 @@ lib/temp
 chicken little/
 lib/mmio/Debug/
 lib/mmio/Release/
+lib/mmio/lib/
 lib/mikmod/Debug/
 lib/mikmod/Release/
+lib/mikmod/lib/
+lib/vdriver/lib/
 app.vcxproj.user

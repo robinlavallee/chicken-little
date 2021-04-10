@@ -169,9 +169,6 @@
     <ClCompile Include="src\loadpcx.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\pal_opt.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\vdrespak.c">
       <Filter>Source Files</Filter>
     </ClCompile>
