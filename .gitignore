@@ -1,6 +1,5 @@
 lib/app/lib
 lib/temp
-chicken little/
 lib/mmio/Debug/
 lib/mmio/Release/
 lib/mmio/lib/
