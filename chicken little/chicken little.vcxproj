@@ -148,6 +148,7 @@
   <ItemGroup>
     <ClCompile Include="src\ai.c" />
     <ClCompile Include="src\animation.c" />
+    <ClCompile Include="src\audiomanager.cpp" />
     <ClCompile Include="src\birdies.c" />
     <ClCompile Include="src\clstates.c" />
     <ClCompile Include="src\display.c" />
@@ -166,10 +167,13 @@
     <ClCompile Include="src\stone.c" />
     <ClCompile Include="src\textinfo.c" />
     <ClCompile Include="src\title.c" />
+    <ClCompile Include="src\XAudioBuffer.cpp" />
+    <ClCompile Include="src\XSourceVoice.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\ai.h" />
     <ClInclude Include="include\animation.h" />
+    <ClInclude Include="include\audiomanager.hpp" />
     <ClInclude Include="include\chicken.h" />
     <ClInclude Include="include\clgfxres.h" />
     <ClInclude Include="include\clmenu.h" />
@@ -182,6 +186,8 @@
     <ClInclude Include="include\random.h" />
     <ClInclude Include="include\stat.h" />
     <ClInclude Include="include\textinfo.h" />
+    <ClInclude Include="include\XAudioBuffer.hpp" />
+    <ClInclude Include="include\XSourceVoice.hpp" />
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="scripts\gamegfx.brk" />
