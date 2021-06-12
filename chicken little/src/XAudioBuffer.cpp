@@ -16,7 +16,7 @@ XAudioBuffer::XAudioBuffer(const std::string& inputFile) {
   stream.unsetf(std::ios::skipws);
 
   stream.seekg(0, std::ios::end);
-  size_t filesize = stream.tellg();
+  size_t filesize = (size_t)stream.tellg();
   stream.seekg(0, std::ios::beg);
 
   m_bytes.reserve(filesize);

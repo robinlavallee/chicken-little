@@ -264,7 +264,8 @@ static ENTITY Entity_Menu =
     menu->cursel++;
     if(menu->cursel >= menu->numsel) menu->cursel = 0;
 
-    mdsfx_playeffect(sfx.menuhigh,vs_sndfx,SF_START_BEGIN,0);
+    XAudioBuffer_Play(sfx.menuhigh);
+    //mdsfx_playeffect(sfx.menuhigh,vs_sndfx,SF_START_BEGIN,0);
 }
 
 
@@ -275,5 +276,6 @@ static ENTITY Entity_Menu =
     menu->cursel--;
     if(menu->cursel < 0) menu->cursel = menu->numsel-1;
 
-    mdsfx_playeffect(sfx.menuhigh,vs_sndfx,SF_START_BEGIN,0);
+    XAudioBuffer_Play(sfx.menuhigh);
+    //mdsfx_playeffect(sfx.menuhigh,vs_sndfx,SF_START_BEGIN,0);
 }

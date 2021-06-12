@@ -2,8 +2,12 @@
 
 #include <xaudio2.h>
 #include <vector>
+#include <map>
 
+#include "XAudioBuffer.hpp"
 #include "XSourceVoice.hpp"
+
+#include "audiomanager_c_bridge.h"
 
 class AudioManager {
  public:
@@ -11,9 +15,17 @@ class AudioManager {
 
   int Init();
   int Shutdown();
+
+  // Add an audio buffer, returns the index of the allocated buffer
+  int AddBuffer(std::unique_ptr<XAudioBuffer>& audioBuffer);
+  bool FreeBuffer(int bufferHandle);
+
  private:
   IXAudio2* m_pXAudio2;
   IXAudio2MasteringVoice* m_pMasterVoice;
 
   std::vector<std::unique_ptr<XSourceVoice>> m_sourceVoices;
+
+  std::map<int, std::unique_ptr<XAudioBuffer>> m_audioBuffers;
+  int m_nextAudioBufferIndex = 0;
 };

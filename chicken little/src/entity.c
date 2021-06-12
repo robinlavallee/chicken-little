@@ -16,6 +16,7 @@
 
 #include "chicken.h"
 #include "mikmod.h"
+#include "audiomanager_c_bridge.h"
 
 
 static int ghosthandler(ENTITY *entity)
@@ -157,7 +158,7 @@ static ENTITY       *nextofkin;
 
 typedef struct ENT_SOUND
 {
-    MD_SAMPLE        *sample;
+    int              sample;
     ENTITY           *entity;
     struct ENT_SOUND *next;
 
@@ -168,12 +169,9 @@ static uint      es_count = 0;
 static ENT_SOUND entsound[10];
 
 // =====================================================================================
-    void Entity_PlaySound(ENTITY *src, MD_SAMPLE *sample)
+    void Entity_PlaySound(ENTITY *src, int sample)
 // =====================================================================================
 {
-    if (!sample) // not completely loaded yet
-        return;
-
     if(es_count)
     {   uint    i;
         for(i=es_count; i; i--)
@@ -251,11 +249,14 @@ static ENT_SOUND entsound[10];
     //  - We check loval to see if it is above 0 first.  If not, then we are 'running
     //    behind' and playing the queued sounds would only slow down the system or get
     //    things confused.
+    // Robin: We don't really need this system anymore since we are using XAudioBuffer now with multiple XSourceVoice
+    // but keeping it now for compatibility
 
     if(es_count && (loval > 0))
     {   uint   i;
-        for(i=0; i<es_count; i++)
-            mdsfx_playeffect(entsound[i].sample,vs_sndfx,SF_START_BEGIN,0);
+      for (i = 0; i < es_count; i++)
+        XAudioBuffer_Play(entsound[i].sample);
+            //mdsfx_playeffect(entsound[i].sample,vs_sndfx,SF_START_BEGIN,0);
         
         es_count = 0;
 

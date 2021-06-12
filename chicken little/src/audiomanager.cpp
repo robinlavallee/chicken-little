@@ -1,5 +1,6 @@
 
 #include "audiomanager.hpp"
+#include "clsfxres.h"
 
 #include <cassert>
 
@@ -40,10 +41,39 @@ int AudioManager::Init() {
     sourceVoice->configure(m_pXAudio2, wfx);
   }
 
+  //const int MaxSFX = SNDFX_MAX;
+
+  /*m_audioBuffers.resize(MaxSFX + 1);
+  for (size_t i = 0; i <= MaxSFX; ++i) {
+    m_audioBuffers[i] = std::make_unique<XAudioBuffer>("data/sounds/" + std::to_string(i) + ".bin");
+  }*/
+
   return 0;
 }
 
+// Not thread-safe
+int AudioManager::AddBuffer(std::unique_ptr<XAudioBuffer>& audioBuffer) {
+  m_audioBuffers.emplace(m_nextAudioBufferIndex++, std::move(audioBuffer));
+  return m_nextAudioBufferIndex - 1;
+}
+
+bool AudioManager::FreeBuffer(int bufferHandle) {
+  auto it = m_audioBuffers.find(bufferHandle);
+  if (it == m_audioBuffers.end()) {
+    return false;
+  }
+
+  m_audioBuffers.erase(it);
+
+  return true;
+}
+
 int AudioManager::Shutdown() {
+
+  // TODO: Make sure all voices have been stopped before
+  m_sourceVoices.clear();
+  m_audioBuffers.clear();
+
   if (m_pMasterVoice) {
     m_pMasterVoice->DestroyVoice();
     m_pMasterVoice = nullptr;

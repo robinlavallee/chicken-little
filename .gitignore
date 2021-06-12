@@ -1,3 +1,5 @@
+.vscode/
+
 lib/app/lib
 lib/temp
 lib/mmio/Debug/

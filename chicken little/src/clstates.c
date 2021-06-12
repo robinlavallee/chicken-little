@@ -466,7 +466,8 @@ KBDATA  p_kbd;
                     // Later on we may decide to give different sound to different option
                     // Air: Also, later on this will probably be moved to the menu entity
 
-                    mdsfx_playeffect(sfx.menuselect,vs_sndfx,SF_START_BEGIN,0);
+                    XAudioBuffer_Play(sfx.menuselect);
+                    //mdsfx_playeffect(sfx.menuselect,vs_sndfx,SF_START_BEGIN,0);
 
                     switch(cl_mainmenu->cursel)
                     {

@@ -11,10 +11,10 @@
 #include "animation.h"
 
 #include "mikmod.h"
+#include "audiomanager_c_bridge.h"
 #include "uniform.h"
 
 #include "vdfont.h"
-
 
 // =====================================================================================
     typedef struct MDRES_DATATABLE
@@ -81,19 +81,19 @@
 //======================================================================================
 {
 
-    MD_SAMPLE    *eggcrack,
-                 *eggbreak,
-                 *eggrotate,
-                 *eggplace;
+    int    eggcrack,
+                 eggbreak,
+                 eggrotate,
+                 eggplace;
 
-    MD_SAMPLE    *birdie1,   *birdie2;
+    int birdie1, birdie2;
 
-    MD_SAMPLE    *blip, *crumble, *thump;
+    int blip, crumble, thump;
 
-    MD_SAMPLE    *go,  *getready,
-                 *win, *lose;
+    int go, getready,
+                 win, lose;
 
-    MD_SAMPLE    *menuhigh,  *menuselect;
+    int menuhigh, menuselect;
 
 } RES_SNDFX;
 

@@ -2,7 +2,7 @@
 /*
  *  Chicken Little.
  *  Lawgiver (Robin Lavallée - robin_lavallee@videotron.ca)
- *  Copyright by myself and Divine Entertainment. (2000)
+ *  Copyright by myself fand Divine Entertainment. (2000)
  *  
  *  Artifical Intelligence, (or dumbness?)
  *  

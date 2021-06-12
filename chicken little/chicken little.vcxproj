@@ -146,9 +146,13 @@
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\ai.c" />
+    <ClCompile Include="src\ai.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">/w14005 %(AdditionalOptions)</AdditionalOptions>
+      <ExceptionHandling Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExceptionHandling>
+    </ClCompile>
     <ClCompile Include="src\animation.c" />
     <ClCompile Include="src\audiomanager.cpp" />
+    <ClCompile Include="src\audiomanager_c_bridge.cpp" />
     <ClCompile Include="src\birdies.c" />
     <ClCompile Include="src\clstates.c" />
     <ClCompile Include="src\display.c" />
@@ -174,6 +178,7 @@
     <ClInclude Include="include\ai.h" />
     <ClInclude Include="include\animation.h" />
     <ClInclude Include="include\audiomanager.hpp" />
+    <ClInclude Include="include\audiomanager_c_bridge.h" />
     <ClInclude Include="include\chicken.h" />
     <ClInclude Include="include\clgfxres.h" />
     <ClInclude Include="include\clmenu.h" />
