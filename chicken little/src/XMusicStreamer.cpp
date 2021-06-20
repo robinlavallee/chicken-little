@@ -18,6 +18,43 @@ XMusicStreamer::XMusicStreamer(XSourceVoice* xSourceVoice, const std::string& fi
   m_thread = std::make_unique<std::thread>([this]() { run(); });
 }
 
+void XMusicStreamer::processCommands() {
+  // check for any pending command
+  Command cmd = Command::None;
+  {
+    std::lock_guard<std::mutex> lock(m_commandsMutex);
+    if (!m_commands.empty()) {
+      cmd = m_commands.front();
+      m_commands.pop();
+    }
+  }
+
+  if (cmd == Command::Play) {
+    m_playMusic = true;
+  } else if (cmd == Command::Stop) {
+    m_playMusic = false;
+    SetFilePointer(m_hFile, 0, 0, FILE_BEGIN);
+    m_overlapped.Offset = m_overlapped.OffsetHigh = 0;
+  } else if (cmd == Command::Pause) {
+    m_playMusic = false;
+  }
+}
+
+void XMusicStreamer::play() {
+  std::lock_guard<std::mutex> lock(m_commandsMutex);
+  m_commands.push(Command::Play);
+}
+
+void XMusicStreamer::stop() {
+  std::lock_guard<std::mutex> lock(m_commandsMutex);
+  m_commands.push(Command::Stop);
+}
+
+void XMusicStreamer::pause() {
+  std::lock_guard<std::mutex> lock(m_commandsMutex);
+  m_commands.push(Command::Pause);
+}
+
 void XMusicStreamer::run() {
   m_overlapped.hEvent = CreateEvent(NULL, TRUE, FALSE, NULL);
 
@@ -27,21 +64,29 @@ void XMusicStreamer::run() {
   OFSTRUCT ofstruct;
   memset(&ofstruct, 0, sizeof(ofstruct));
   ofstruct.cBytes = sizeof(ofstruct);
-  HANDLE hFile = (HANDLE)OpenFile(m_filename.c_str(), &ofstruct, OF_READ);
+  m_hFile = (HANDLE)OpenFile(m_filename.c_str(), &ofstruct, OF_READ);
 
 loop:
   unsigned int CurrentDiskReadBuffer = 0;
   unsigned int CurrentPosition = 0;
   HRESULT hr = S_OK;
+  m_overlapped.Offset = m_overlapped.OffsetHigh = 0;
   while (CurrentPosition < cbWaveSize) {
+    processCommands();
 
     while (!m_playMusic) {
-      Sleep(10);
+      ::Sleep(10);
+      processCommands();
+    }
+
+    while (m_sourceVoice->getQueuedCount() >= MAX_BUFFER_COUNT) {
+      ::Sleep(5);
     }
 
     DWORD cbValid = min(STREAMING_BUFFER_SIZE, cbWaveSize - CurrentPosition);
     DWORD dwRead;
-    if (0 == ReadFile(hFile, m_xAudioBuffers[CurrentDiskReadBuffer]->getData(), STREAMING_BUFFER_SIZE, &dwRead, &m_overlapped))
+    if (0 == ReadFile(m_hFile, m_xAudioBuffers[CurrentDiskReadBuffer]->getData(), STREAMING_BUFFER_SIZE, &dwRead,
+               &m_overlapped))
       hr = HRESULT_FROM_WIN32(GetLastError());
     m_overlapped.Offset += cbValid;
 
@@ -49,12 +94,7 @@ loop:
     CurrentPosition += cbValid;
 
     DWORD NumberBytesTransferred;
-    ::GetOverlappedResult(hFile, &m_overlapped, &NumberBytesTransferred, TRUE);
-
-    // I think this should be higher in the loop instead? otherwise we risk overwriting the first buffer if we read fast?
-    while (m_sourceVoice->getQueuedCount() >= MAX_BUFFER_COUNT) {
-      ::Sleep(10);
-    }
+    ::GetOverlappedResult(m_hFile, &m_overlapped, &NumberBytesTransferred, TRUE);
 
     XAUDIO2_BUFFER& xAudio2Buffer = m_xAudioBuffers[CurrentDiskReadBuffer]->getBuffer();
     xAudio2Buffer.AudioBytes = cbValid;
@@ -63,9 +103,9 @@ loop:
     CurrentDiskReadBuffer %= MAX_BUFFER_COUNT;
   }
 
-  hr = SetFilePointer(hFile, 0, 0, FILE_BEGIN);
+  hr = SetFilePointer(m_hFile, 0, 0, FILE_BEGIN);
   assert(hr == S_OK);
   goto loop;
 
-  CloseHandle(hFile);
+  CloseHandle(m_hFile);
 }
