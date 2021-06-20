@@ -31,6 +31,7 @@ class AudioManager {
 
   // Play the music given a music HANDLE
   void PlayMusic(int musicHandle);
+  void StopMusic(int musicHandle);
 
   // Free the music given by HANDLE
   bool FreeMusic(int musicHandle);

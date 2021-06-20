@@ -10,6 +10,8 @@ class XMusicStreamer {
  public:
   XMusicStreamer(XSourceVoice* xSourceVoice, const std::string& filename);
 
+  void play() { m_playMusic = true; }
+  void stop() { m_playMusic = false; }
  protected:
  private:
 
@@ -24,4 +26,6 @@ class XMusicStreamer {
   static const int STREAMING_BUFFER_SIZE = 65536;
   static const int MAX_BUFFER_COUNT = 3;
   std::vector<std::unique_ptr<XAudioBuffer>> m_xAudioBuffers;
+
+  std::atomic<bool> m_playMusic;
 };

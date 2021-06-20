@@ -13,6 +13,8 @@ XMusicStreamer::XMusicStreamer(XSourceVoice* xSourceVoice, const std::string& fi
     xBuffer = std::make_unique<XAudioBuffer>(STREAMING_BUFFER_SIZE);
   }
 
+  m_playMusic = false;
+
   m_thread = std::make_unique<std::thread>([this]() { run(); });
 }
 
@@ -32,6 +34,10 @@ loop:
   unsigned int CurrentPosition = 0;
   HRESULT hr = S_OK;
   while (CurrentPosition < cbWaveSize) {
+
+    while (!m_playMusic) {
+      Sleep(10);
+    }
 
     DWORD cbValid = min(STREAMING_BUFFER_SIZE, cbWaveSize - CurrentPosition);
     DWORD dwRead;

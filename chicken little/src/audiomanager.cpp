@@ -86,7 +86,17 @@ int AudioManager::LoadMusic(const std::string& filename) {
 }
 
 void AudioManager::PlayMusic(int musicHandle) {
-    
+  auto it = m_musics.find(musicHandle-1);
+  if (it != m_musics.end()) {
+    (*it).second.m_musicStreamer->play();
+  }
+}
+
+void AudioManager::StopMusic(int musicHandle) {
+  auto it = m_musics.find(musicHandle - 1);
+  if (it != m_musics.end()) {
+    (*it).second.m_musicStreamer->stop();
+  }
 }
 
 // Implement me

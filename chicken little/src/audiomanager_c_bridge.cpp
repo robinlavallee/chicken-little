@@ -31,5 +31,5 @@ void XAudioMusic_Play(int musicHandle) {
 }
 
 void XAudioMusic_Stop(int musicHandle) {
-  // implement me
+  audioManager.StopMusic(musicHandle);
 }
