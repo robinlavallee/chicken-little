@@ -17,6 +17,9 @@ class XSourceVoice : public IXAudio2VoiceCallback {
   XSourceVoice& operator=(const XSourceVoice& rhs) = delete;
 
   HRESULT configure(IXAudio2* xAudio2, WAVEFORMATEX wfx);
+
+  void start();
+  void stop();
   HRESULT play(const XAudioBuffer& xAudioBuffer);
 
   size_t getQueuedCount() const;

@@ -30,13 +30,13 @@ void XMusicStreamer::processCommands() {
   }
 
   if (cmd == Command::Play) {
+    m_sourceVoice->start();
     m_playMusic = true;
   } else if (cmd == Command::Stop) {
     m_playMusic = false;
+    m_sourceVoice->stop();
     SetFilePointer(m_hFile, 0, 0, FILE_BEGIN);
     m_overlapped.Offset = m_overlapped.OffsetHigh = 0;
-  } else if (cmd == Command::Pause) {
-    m_playMusic = false;
   }
 }
 

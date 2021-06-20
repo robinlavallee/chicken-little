@@ -35,6 +35,15 @@ HRESULT XSourceVoice::configure(IXAudio2* xAudio2, WAVEFORMATEX wfx) {
   return hr;
 }
 
+void XSourceVoice::start() {
+  m_sourceVoice->Start();
+}
+
+void XSourceVoice::stop() {
+  m_sourceVoice->Stop();
+  m_sourceVoice->FlushSourceBuffers();
+}
+
 HRESULT XSourceVoice::play(const XAudioBuffer& xAudioBuffer) {
 
   if (!m_sourceVoice) {
