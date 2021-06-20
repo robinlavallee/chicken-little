@@ -36,7 +36,6 @@ XAudioBuffer::XAudioBuffer(const std::string& inputFile) {
 }
 
 void XAudioBuffer::onBufferStart() {
-  assert(m_state == State::UNRENDERED);
   m_state = State::STARTED;
 }
 
@@ -46,6 +45,3 @@ void XAudioBuffer::onBufferEnd() {
   }
 }
 
-void XAudioBuffer::onFlush() {
-  m_state = State::FLUSHED;
-}

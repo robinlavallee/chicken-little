@@ -4,10 +4,6 @@
 #include <cassert>
 #include <algorithm>
 
-const int MaxQueuedAudioBuffers = 4;  // TODO: TrackBuffer end of stream latency shouldn't depend on audio buffer size.
-static_assert(MaxQueuedAudioBuffers <= XAUDIO2_MAX_QUEUED_BUFFERS,
-  "MaxQueuedAudioBuffers must be less or equal to XAUDIO2_MAX_QUEUED_BUFFERS");
-
 XSourceVoice::XSourceVoice()
     : m_sourceVoice(nullptr), m_threadId(std::this_thread::get_id()) {}
 
@@ -22,7 +18,7 @@ void XSourceVoice::release() {
     return;
   }
 
-  stop();
+  m_sourceVoice->Stop();
 
   m_sourceVoice->DestroyVoice();
   m_sourceVoice = nullptr;
@@ -32,26 +28,11 @@ HRESULT XSourceVoice::configure(IXAudio2* xAudio2, WAVEFORMATEX wfx) {
   HRESULT hr = xAudio2->CreateSourceVoice(&m_sourceVoice, reinterpret_cast<WAVEFORMATEX*>(&wfx), 0, 2.0F, this);
   if (FAILED(hr)) {
     m_sourceVoice = nullptr;
+  } else {
+    hr = m_sourceVoice->Start();
   }
 
   return hr;
-}
-
-
-HRESULT XSourceVoice::start() {
-  if (!m_sourceVoice) {
-    return E_FAIL;
-  }
-
-  return m_sourceVoice->Start();
-}
-
-HRESULT XSourceVoice::stop() {
-  if (!m_sourceVoice) {
-    return E_FAIL;
-  }
-
-  return m_sourceVoice->Stop();
 }
 
 HRESULT XSourceVoice::play(const XAudioBuffer& xAudioBuffer) {

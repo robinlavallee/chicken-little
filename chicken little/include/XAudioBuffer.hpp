@@ -15,11 +15,10 @@ class XAudioBuffer {
 
   void onBufferStart();
   void onBufferEnd();
-  void onFlush();
 
  private:
   XAUDIO2_BUFFER m_buffer;
   std::vector<uint8_t> m_bytes;
 
-  enum class State { UNRENDERED, STARTED, FLUSHED, RENDERED } m_state = State::UNRENDERED;
+  enum class State { STARTED, RENDERED } m_state = State::STARTED;
 };

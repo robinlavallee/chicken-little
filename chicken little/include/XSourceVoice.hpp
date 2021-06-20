@@ -18,9 +18,7 @@ class XSourceVoice : public IXAudio2VoiceCallback {
 
   HRESULT configure(IXAudio2* xAudio2, WAVEFORMATEX wfx);
   HRESULT play(const XAudioBuffer& xAudioBuffer);
-  HRESULT start();
-  HRESULT stop();
-
+ 
  protected:
   // IXAudio2VoiceCallback overrides
   void __stdcall OnBufferStart(void* pBufferContext) override;
