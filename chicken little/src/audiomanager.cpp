@@ -99,7 +99,6 @@ void AudioManager::StopMusic(int musicHandle) {
   }
 }
 
-// Implement me
 bool AudioManager::FreeMusic(int musicHandle) {
   auto it = m_musics.find(musicHandle - 1);
   if (it != m_musics.end()) {

@@ -13,14 +13,14 @@ class XMusicStreamer {
   XMusicStreamer(XSourceVoice* xSourceVoice, const std::string& filename);
 
   void play();
-  void pause();
   void stop();
+  void destroy();
 
   enum class Command {
 	  None,
 	  Play,
       Stop,
-	  Pause,
+	  Destroy,
   };
 
  protected:
@@ -44,4 +44,5 @@ class XMusicStreamer {
   std::queue<Command> m_commands;
 
   std::atomic<bool> m_playMusic;
+  std::atomic<bool> m_destroy;
 };

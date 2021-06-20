@@ -78,22 +78,6 @@ void XSourceVoice::OnBufferEnd(void* pBufferContext) {
   if (!pBufferContext) {
     return;
   }
-
-  //XAudioBuffer* audioBuffer = reinterpret_cast<XAudioBuffer*>(pBufferContext);
-  //audioBuffer->onBufferEnd();
-  //if (audioBuffer->hasRendered()) {
-  //  auto sample = audioBuffer->getSample();
-  //  m_lastRenderedTime = sample.decodeTime + sample.duration;
-  //}
-
-  //{
-  //  std::lock_guard<std::mutex> lock(m_mutex);
-  //  // Add 'to be deleted'. Must be fast since this is a XA2 callback. (<1ms).
-  //  assert(m_toRemove.find(audioBuffer) == m_toRemove.end());
-  //  m_toRemove.insert(audioBuffer);
-  //}
-
-  //m_semaphore.notify();
 }
 
 void XSourceVoice::OnVoiceError(void* /*pBufferContext*/, HRESULT /*error*/) {

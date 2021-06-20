@@ -256,7 +256,6 @@ static ENT_SOUND entsound[10];
     {   uint   i;
       for (i = 0; i < es_count; i++)
         XAudioBuffer_Play(entsound[i].sample);
-            //mdsfx_playeffect(entsound[i].sample,vs_sndfx,SF_START_BEGIN,0);
         
         es_count = 0;
 

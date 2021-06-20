@@ -467,7 +467,6 @@ KBDATA  p_kbd;
                     // Air: Also, later on this will probably be moved to the menu entity
 
                     XAudioBuffer_Play(sfx.menuselect);
-                    //mdsfx_playeffect(sfx.menuselect,vs_sndfx,SF_START_BEGIN,0);
 
                     switch(cl_mainmenu->cursel)
                     {
@@ -735,6 +734,7 @@ extern void Match_Renderer(void);
 
             if(!cursong) {
               cursong = music.title;
+              // Player_SetVolume(cursong, 90);
               XAudioMusic_Play(cursong);
             }
 
@@ -763,6 +763,7 @@ extern void Match_Renderer(void);
 
             if(!cursong) {
               cursong = music.title;
+              // Player_SetVolume(cursong, 112);
               XAudioMusic_Play(cursong);
             }
 
@@ -809,6 +810,7 @@ extern void Match_Renderer(void);
             }
 
             cursong = music.stage[chick->stage];
+            // Player_SetVolume(cursong, chick->stage ? 38 : 60);
             XAudioMusic_Play(cursong);
 
             StartMatch(CONTROL_HUMAN, CONTROL_CPU);
