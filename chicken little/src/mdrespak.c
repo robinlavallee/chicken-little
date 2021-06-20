@@ -118,6 +118,11 @@
     return -1;
 }
 
+int MDRes_LoadSampleXAudio(MD_RESPAK* res, uint idx) {
+  char sample_path[255];
+  sprintf_s(sample_path, sizeof(sample_path), "data/sounds/%d.bin", idx);
+  return XAudioBuffer_Create(sample_path);
+}
 
 // ===========================================================================
     MD_SAMPLE *MDRes_LoadSample(MD_RESPAK *res, uint idx)

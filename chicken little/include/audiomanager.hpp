@@ -16,8 +16,12 @@ class AudioManager {
   int Init();
   int Shutdown();
 
-  // Add an audio buffer, returns the index of the allocated buffer
+  // Add an audio buffer, returns the HANDLE of the allocated buffer
   int AddBuffer(std::unique_ptr<XAudioBuffer>& audioBuffer);
+
+  void PlayBuffer(int bufferHandle);
+
+  // Free the buffer given an HANDLE obtained from AddBuffer
   bool FreeBuffer(int bufferHandle);
 
  private:

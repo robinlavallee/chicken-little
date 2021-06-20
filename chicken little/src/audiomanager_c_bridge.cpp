@@ -15,5 +15,5 @@ bool XAudioBuffer_Free(int bufferHandle) {
 }
 
 void XAudioBuffer_Play(int bufferHandle) {
-	// TODO: Implement me
+  audioManager.PlayBuffer(bufferHandle);
 }

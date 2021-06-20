@@ -41,24 +41,27 @@ int AudioManager::Init() {
     sourceVoice->configure(m_pXAudio2, wfx);
   }
 
-  //const int MaxSFX = SNDFX_MAX;
-
-  /*m_audioBuffers.resize(MaxSFX + 1);
-  for (size_t i = 0; i <= MaxSFX; ++i) {
-    m_audioBuffers[i] = std::make_unique<XAudioBuffer>("data/sounds/" + std::to_string(i) + ".bin");
-  }*/
-
   return 0;
 }
 
 // Not thread-safe
 int AudioManager::AddBuffer(std::unique_ptr<XAudioBuffer>& audioBuffer) {
   m_audioBuffers.emplace(m_nextAudioBufferIndex++, std::move(audioBuffer));
-  return m_nextAudioBufferIndex - 1;
+  return m_nextAudioBufferIndex;
+}
+
+void AudioManager::PlayBuffer(int bufferHandle) {
+  auto it = m_audioBuffers.find(bufferHandle - 1);
+  if (it == m_audioBuffers.end()) {
+    return;
+  }
+
+  // TODO: Use empty voices
+  m_sourceVoices[0]->play(*(*it).second.get());
 }
 
 bool AudioManager::FreeBuffer(int bufferHandle) {
-  auto it = m_audioBuffers.find(bufferHandle);
+  auto it = m_audioBuffers.find(bufferHandle-1);
   if (it == m_audioBuffers.end()) {
     return false;
   }

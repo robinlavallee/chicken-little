@@ -89,8 +89,10 @@ extern void Portrait_LoadResources(CL_RES *respak);
             if(!music.title)
                 music.title = Unimod_Load(chick->md, "menu_theme.xm");
 
-            if(!sfx.menuhigh)   sfx.menuhigh   = MDRes_LoadSample(respak->audiopak, SNDFX_MENU_HIGHLIGHT);
-            if(!sfx.menuselect) sfx.menuselect = MDRes_LoadSample(respak->audiopak, SNDFX_MENU_SELECT);
+            if (!sfx.menuhigh)
+              sfx.menuhigh = MDRes_LoadSampleXAudio(respak->audiopak, SNDFX_MENU_HIGHLIGHT);
+            if (!sfx.menuselect)
+              sfx.menuselect = MDRes_LoadSampleXAudio(respak->audiopak, SNDFX_MENU_SELECT);
         break;
 
         // =============================================================================
@@ -127,23 +129,36 @@ extern void Portrait_LoadResources(CL_RES *respak);
         
             font.score = FontSpr_Load(chrtab, 18, 10, 1, 0, respak->videopak, RES_SCOREFONT_NORMAL);
 
-            if(!sfx.birdie1)    sfx.birdie1   = MDRes_LoadSample(respak->audiopak, SNDFX_EGG_CHIRP1);
-            if(!sfx.birdie2)    sfx.birdie2   = MDRes_LoadSample(respak->audiopak, SNDFX_EGG_CHIRP2);
+            if (!sfx.birdie1)
+              sfx.birdie1 = MDRes_LoadSampleXAudio(respak->audiopak, SNDFX_EGG_CHIRP1);
+            if (!sfx.birdie2)
+              sfx.birdie2 = MDRes_LoadSampleXAudio(respak->audiopak, SNDFX_EGG_CHIRP2);
 
-            if(!sfx.eggcrack)   sfx.eggcrack  = MDRes_LoadSample(respak->audiopak, SNDFX_EGG_CRACK);
-            if(!sfx.eggbreak)   sfx.eggbreak  = MDRes_LoadSample(respak->audiopak, SNDFX_EGG_BREAK);
+            if (!sfx.eggcrack)
+              sfx.eggcrack = MDRes_LoadSampleXAudio(respak->audiopak, SNDFX_EGG_CRACK);
+            if (!sfx.eggbreak)
+              sfx.eggbreak = MDRes_LoadSampleXAudio(respak->audiopak, SNDFX_EGG_BREAK);
 
-            if(!sfx.blip)       sfx.blip      = MDRes_LoadSample(respak->audiopak, SNDFX_EGG_BLIP);
-            if(!sfx.crumble)    sfx.crumble   = MDRes_LoadSample(respak->audiopak, SNDFX_STONE_ROTATE);
-            if(!sfx.thump)      sfx.thump     = MDRes_LoadSample(respak->audiopak, SNDFX_GAMEPIECE_THUMP);
+            if (!sfx.blip)
+              sfx.blip = MDRes_LoadSampleXAudio(respak->audiopak, SNDFX_EGG_BLIP);
+            if (!sfx.crumble)
+              sfx.crumble = MDRes_LoadSampleXAudio(respak->audiopak, SNDFX_STONE_ROTATE);
+            if (!sfx.thump)
+              sfx.thump = MDRes_LoadSampleXAudio(respak->audiopak, SNDFX_GAMEPIECE_THUMP);
 
-            if(!sfx.eggrotate)  sfx.eggrotate = MDRes_LoadSample(respak->audiopak, SNDFX_GAMEPIECE_ROTATE);
-            if(!sfx.eggplace)   sfx.eggplace  = MDRes_LoadSample(respak->audiopak, SNDFX_GAMEPIECE_PLACE);
+            if (!sfx.eggrotate)
+              sfx.eggrotate = MDRes_LoadSampleXAudio(respak->audiopak, SNDFX_GAMEPIECE_ROTATE);
+            if (!sfx.eggplace)
+              sfx.eggplace = MDRes_LoadSampleXAudio(respak->audiopak, SNDFX_GAMEPIECE_PLACE);
 
-            if(!sfx.go)         sfx.go        = MDRes_LoadSample(respak->audiopak, SNDFX_ANNOUNCER_GO);
-            if(!sfx.getready)   sfx.getready  = MDRes_LoadSample(respak->audiopak, SNDFX_ANNOUNCER_GETREADY);
-            if(!sfx.win)        sfx.win       = MDRes_LoadSample(respak->audiopak, SNDFX_ANNOUNCER_WIN);
-            if(!sfx.lose)       sfx.lose      = MDRes_LoadSample(respak->audiopak, SNDFX_ANNOUNCER_LOSE);
+            if (!sfx.go)
+              sfx.go = MDRes_LoadSampleXAudio(respak->audiopak, SNDFX_ANNOUNCER_GO);
+            if (!sfx.getready)
+              sfx.getready = MDRes_LoadSampleXAudio(respak->audiopak, SNDFX_ANNOUNCER_GETREADY);
+            if (!sfx.win)
+              sfx.win = MDRes_LoadSampleXAudio(respak->audiopak, SNDFX_ANNOUNCER_WIN);
+            if (!sfx.lose)
+              sfx.lose = MDRes_LoadSampleXAudio(respak->audiopak, SNDFX_ANNOUNCER_LOSE);
 
         break;
     }

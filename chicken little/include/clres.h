@@ -119,6 +119,7 @@ extern MD_RESPAK *MDRes_OpenFN(MDRIVER *md, CHAR *headfn, CHAR *datafn);
 extern BOOL       MDRes_LoadDependencies(MD_RESPAK *res);
 extern BOOL       MDRes_ReloadResources(MD_RESPAK *res, MDRIVER *md);
 extern MD_SAMPLE *MDRes_LoadSample(MD_RESPAK *res, uint idx);
+extern int MDRes_LoadSampleXAudio(MD_RESPAK *res, uint idx);
 extern void       MDRes_Close(MD_RESPAK *res);
 
 

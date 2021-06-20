@@ -17,13 +17,9 @@ class XSourceVoice : public IXAudio2VoiceCallback {
   XSourceVoice& operator=(const XSourceVoice& rhs) = delete;
 
   HRESULT configure(IXAudio2* xAudio2, WAVEFORMATEX wfx);
+  HRESULT play(const XAudioBuffer& xAudioBuffer);
   HRESULT start();
   HRESULT stop();
- 
-  void setVolume(float volume);
-  void garbageCollectBuffers();
-
-  void setPlaybackRate(float rate);
 
  protected:
   // IXAudio2VoiceCallback overrides
@@ -49,6 +45,4 @@ class XSourceVoice : public IXAudio2VoiceCallback {
 
   std::thread::id m_threadId;
 
-  float m_setPlaybackRate = 1.0f;
-  float m_volume = 1.0f;
 };
