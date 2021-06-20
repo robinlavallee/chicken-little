@@ -112,6 +112,6 @@ extern void     Entity_KillSelf(ENTITY *src);
 extern void     Entity_SetAnimation(ENTITY *dest, ANIMATION *animation);
 extern void     Entity_Render(ENTITY *entitylist);
 
-extern void     Entity_PlaySound(ENTITY *src, MD_SAMPLE *sample);
+extern void     Entity_PlaySound(ENTITY *src, int sample);
 
 #endif

@@ -15,7 +15,7 @@ TITLE       *cl_title    = NULL;
 MENU        *cl_mainmenu = NULL,
             *cl_pausemenu = NULL;
 
-MPLAYER     *cursong;
+int     cursong;
 
 enum
 {   KBD_SPACE  = 0,
@@ -466,7 +466,7 @@ KBDATA  p_kbd;
                     // Later on we may decide to give different sound to different option
                     // Air: Also, later on this will probably be moved to the menu entity
 
-                    mdsfx_playeffect(sfx.menuselect,vs_sndfx,SF_START_BEGIN,0);
+                    XAudioBuffer_Play(sfx.menuselect);
 
                     switch(cl_mainmenu->cursel)
                     {
@@ -676,9 +676,8 @@ extern void Match_Renderer(void);
 
         case CL_STATE_MATCH:
         case CL_STATE_SINGLEMATCH:
-            Player_Stop(cursong);
-            Player_Free(cursong);
-            cursong = NULL;
+          XAudioMusic_Stop(cursong);
+            cursong = 0;
 
         case CL_STATE_DEMO:
             // Remove the player entities.
@@ -733,10 +732,10 @@ extern void Match_Renderer(void);
 
             App_SetRenderer(Intro_Renderer);
 
-            if(!cursong)
-            {   cursong = Player_InitSong(music.title, NULL, PF_LOOP, 32);
-                Player_SetVolume(cursong, 90);
-                Player_Start(cursong);
+            if(!cursong) {
+              cursong = music.title;
+              // Player_SetVolume(cursong, 90);
+              XAudioMusic_Play(cursong);
             }
 
             {
@@ -762,11 +761,10 @@ extern void Match_Renderer(void);
             cl_title = Title_Initialize(&chicken.entitylist);
             chick->passtime = chick->time + 17000;
 
-            if(!cursong)
-            {   cursong = Player_InitSong(music.title, NULL, PF_LOOP, 32);
-                Player_SetVolume(cursong, 112);
-                Player_SetPosition(cursong, 1, 0);
-                Player_Start(cursong);
+            if(!cursong) {
+              cursong = music.title;
+              // Player_SetVolume(cursong, 112);
+              XAudioMusic_Play(cursong);
             }
 
         break;
@@ -806,15 +804,14 @@ extern void Match_Renderer(void);
             CLEAR_STRUCT(p_kbd);
             App_SetRenderer(Match_Renderer);
 
-            if(cursong)
-            {   Player_Stop(cursong);
-                Player_Free(cursong);
-                cursong = NULL;
+            if(cursong) {
+                XAudioMusic_Stop(cursong);
+                cursong = 0;
             }
 
-            cursong = Player_InitSong(music.stage[chick->stage], NULL, PF_LOOP, 32);
-            Player_SetVolume(cursong, chick->stage ? 38 : 60);
-            Player_Start(cursong);
+            cursong = music.stage[chick->stage];
+            // Player_SetVolume(cursong, chick->stage ? 38 : 60);
+            XAudioMusic_Play(cursong);
 
             StartMatch(CONTROL_HUMAN, CONTROL_CPU);
         break;
@@ -828,16 +825,15 @@ extern void Match_Renderer(void);
             App_SetRenderer(Match_Renderer);
 
             if(cursong)
-            {   Player_Stop(cursong);
-                Player_Free(cursong);
-                cursong = NULL;
+            {   
+                XAudioMusic_Stop(cursong);
+                cursong = 0;
             }
             
             
-              cursong = Player_InitSong(music.stage[chick->stage], NULL, PF_LOOP, 32);
-              Player_SetVolume(cursong, chick->stage ? 38 : 60);
-              Player_Start(cursong);
-
+              cursong = music.stage[chick->stage];
+              //Player_SetVolume(cursong, chick->stage ? 38 : 60);
+              XAudioMusic_Play(cursong);
             
             chicken.options.single = TRUE;
             StartMatch(CONTROL_HUMAN, CONTROL_NONE);

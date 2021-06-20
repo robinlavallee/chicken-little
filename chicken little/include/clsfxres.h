@@ -1,4 +1,6 @@
-#define SNDFX_ANNOUNCER_GETREADY       0
+#pragma once
+
+#define SNDFX_ANNOUNCER_GETREADY     0
 #define SNDFX_ANNOUNCER_GO           1
 #define SNDFX_ANNOUNCER_WIN          2
 #define SNDFX_ANNOUNCER_LOSE         3
@@ -13,3 +15,4 @@
 #define SNDFX_STONE_ROTATE          12
 #define SNDFX_MENU_HIGHLIGHT        13
 #define SNDFX_MENU_SELECT           14
+#define SNDFX_MAX SNDFX_MENU_SELECT

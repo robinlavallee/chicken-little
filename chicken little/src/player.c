@@ -370,7 +370,12 @@ extern int gp_perfect;
                     Entity_PlaySound(&player->entity, sfx.win);
 
                 Player_SetState(player, PLAYER_STATE_LOSE);
-                Player_SetState(GetOpponent(player), PLAYER_STATE_WIN);
+                
+                PLAYER *oponent = GetOpponent(player);
+                if (oponent) {
+                  Player_SetState(oponent, PLAYER_STATE_WIN);
+                }
+                
 
                 return STATE_PRIORITY_HIGH;
             }

@@ -11,10 +11,10 @@
 #include "animation.h"
 
 #include "mikmod.h"
+#include "audiomanager_c_bridge.h"
 #include "uniform.h"
 
 #include "vdfont.h"
-
 
 // =====================================================================================
     typedef struct MDRES_DATATABLE
@@ -62,8 +62,8 @@
     typedef struct RES_MUSIC
 //======================================================================================
 {
-    UNIMOD   *title;
-    UNIMOD   *stage[2];
+    int   title;
+    int   stage[2];
 
 } RES_MUSIC;
 
@@ -81,19 +81,19 @@
 //======================================================================================
 {
 
-    MD_SAMPLE    *eggcrack,
-                 *eggbreak,
-                 *eggrotate,
-                 *eggplace;
+    int    eggcrack,
+                 eggbreak,
+                 eggrotate,
+                 eggplace;
 
-    MD_SAMPLE    *birdie1,   *birdie2;
+    int birdie1, birdie2;
 
-    MD_SAMPLE    *blip, *crumble, *thump;
+    int blip, crumble, thump;
 
-    MD_SAMPLE    *go,  *getready,
-                 *win, *lose;
+    int go, getready,
+                 win, lose;
 
-    MD_SAMPLE    *menuhigh,  *menuselect;
+    int menuhigh, menuselect;
 
 } RES_SNDFX;
 
@@ -119,6 +119,7 @@ extern MD_RESPAK *MDRes_OpenFN(MDRIVER *md, CHAR *headfn, CHAR *datafn);
 extern BOOL       MDRes_LoadDependencies(MD_RESPAK *res);
 extern BOOL       MDRes_ReloadResources(MD_RESPAK *res, MDRIVER *md);
 extern MD_SAMPLE *MDRes_LoadSample(MD_RESPAK *res, uint idx);
+extern int MDRes_LoadSampleXAudio(MD_RESPAK *res, uint idx);
 extern void       MDRes_Close(MD_RESPAK *res);
 
 
