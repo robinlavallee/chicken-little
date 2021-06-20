@@ -3,10 +3,11 @@
 #include <assert.h>
 #include <filesystem>
 
-XMusicStreamer::XMusicStreamer(XSourceVoice* xSourceVoice, const char* filename) 
+XMusicStreamer::XMusicStreamer(XSourceVoice* xSourceVoice, const std::string& filename) 
     : m_sourceVoice(xSourceVoice)
     , m_filename(filename) {
 
+  assert(xSourceVoice);
   m_xAudioBuffers.resize(MAX_BUFFER_COUNT);
   for (auto& xBuffer : m_xAudioBuffers) {
     xBuffer = std::make_unique<XAudioBuffer>(STREAMING_BUFFER_SIZE);

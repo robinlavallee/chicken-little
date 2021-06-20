@@ -87,7 +87,7 @@ extern void Portrait_LoadResources(CL_RES *respak);
             Title_LoadResources(respak);
 
             if(!music.title)
-                music.title = Unimod_Load(chick->md, "menu_theme.xm");
+                music.title = XAudioMusic_Load("data/music/menu_theme.pcm");
 
             if (!sfx.menuhigh)
               sfx.menuhigh = MDRes_LoadSampleXAudio(respak->audiopak, SNDFX_MENU_HIGHLIGHT);
@@ -104,7 +104,7 @@ extern void Portrait_LoadResources(CL_RES *respak);
         // grounds, eggs, etc. etc.
 
             if(!music.stage[chick->stage])
-                music.stage[chick->stage] = Unimod_Load(chick->md, chick->stage ? "puzzle9.it" : "metro_a.xm");
+                music.stage[chick->stage] = XAudioMusic_Load(chick->stage ? "data/music/puzzle9.pcm" : "data/music/metro_a.pcm");
 
             VDRes_LoadSprite(respak->videopak, &chick->layout, RES_LAYOUT_FIRST);
             

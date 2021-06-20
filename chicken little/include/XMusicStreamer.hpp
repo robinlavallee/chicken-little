@@ -8,7 +8,7 @@
 
 class XMusicStreamer {
  public:
-  XMusicStreamer(XSourceVoice* xSourceVoice, const char* filename);
+  XMusicStreamer(XSourceVoice* xSourceVoice, const std::string& filename);
 
  protected:
  private:

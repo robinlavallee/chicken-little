@@ -6,6 +6,7 @@
 
 #include "XAudioBuffer.hpp"
 #include "XSourceVoice.hpp"
+#include "XMusicStreamer.hpp"
 
 #include "audiomanager_c_bridge.h"
 
@@ -33,7 +34,7 @@ class AudioManager {
 
   // Free the music given by HANDLE
   bool FreeMusic(int musicHandle);
-
+  
  private:
   IXAudio2* m_pXAudio2;
   IXAudio2MasteringVoice* m_pMasterVoice;
@@ -41,15 +42,17 @@ class AudioManager {
   std::vector<std::unique_ptr<XSourceVoice>> m_sourceVoices;
   std::map<int, std::unique_ptr<XAudioBuffer>> m_audioBuffers;
   int m_nextAudioBufferIndex = 0;
-
-  // The voice used to play streaming music
-  std::unique_ptr<XSourceVoice> m_musicVoice;
-
+ 
   struct MusicFile {
-    MusicFile(const std::string& _path) : path(_path) {}
+    MusicFile() = default;
+    MusicFile(IXAudio2* xAudio2, const std::string& _path);
 
+    IXAudio2* m_pXAudio2 = nullptr;
     std::string path;
+    std::unique_ptr<XSourceVoice> m_musicVoice;
+    std::unique_ptr<XMusicStreamer> m_musicStreamer;   
   };
 
-  std::vector<MusicFile> m_musics;
+  std::map<int, MusicFile> m_musics;
+  int m_nextMusicIndex = 0;
 };

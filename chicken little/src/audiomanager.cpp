@@ -20,11 +20,7 @@ AudioManager::AudioManager() {
   Init();
 }
 
-int AudioManager::Init() {
-  if (!m_pXAudio2) {
-    return -1;
-  }
-    
+static WAVEFORMATEX getWaveFormat() {
   WAVEFORMATEX wfx;
   wfx.wFormatTag = WAVE_FORMAT_PCM;
   wfx.nChannels = 2;
@@ -33,6 +29,16 @@ int AudioManager::Init() {
   wfx.nBlockAlign = wfx.nChannels * wfx.wBitsPerSample / 8;
   wfx.nAvgBytesPerSec = wfx.nSamplesPerSec * wfx.wBitsPerSample * wfx.nChannels / 8;
   wfx.cbSize = 0;
+
+  return wfx;
+}
+
+int AudioManager::Init() {
+  if (!m_pXAudio2) {
+    return -1;
+  }
+    
+  WAVEFORMATEX wfx = getWaveFormat();
 
   m_sourceVoices.resize(MaxVoices);
   for (auto& sourceVoice : m_sourceVoices) {
@@ -75,18 +81,12 @@ bool AudioManager::FreeBuffer(int bufferHandle) {
 }
 
 int AudioManager::LoadMusic(const std::string& filename) {
-  for (int i = 0; i < m_musics.size(); ++i) {
-    if (m_musics[i].path == filename) {
-      return i + 1;
-    }
-  }
-
-  m_musics.push_back(filename);
-  return m_musics.size();
+  m_musics[m_nextMusicIndex++] = MusicFile(m_pXAudio2, filename);
+  return m_nextMusicIndex;
 }
 
 void AudioManager::PlayMusic(int musicHandle) {
-
+    
 }
 
 // Implement me
@@ -112,4 +112,15 @@ int AudioManager::Shutdown() {
   }
 
   return 0;
+}
+
+AudioManager::MusicFile::MusicFile(IXAudio2* xAudio2, const std::string& _path) 
+    : m_pXAudio2(xAudio2)
+    , path(_path) {
+  m_musicVoice = std::make_unique<XSourceVoice>();
+
+  WAVEFORMATEX wfx = getWaveFormat();
+  m_musicVoice->configure(m_pXAudio2, wfx);
+
+  m_musicStreamer = std::make_unique<XMusicStreamer>(m_musicVoice.get(), path);
 }
