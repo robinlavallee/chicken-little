@@ -10,3 +10,11 @@ lib/mikmod/Release/
 lib/mikmod/lib/
 lib/vdriver/lib/
 app.vcxproj.user
+
+chicken little/temp/
+lib/app/x64/
+lib/mikmod/temp/
+lib/mikmod/x64/
+lib/mmio/temp/
+lib/mmio/x64/
+lib/vdriver/x64/
