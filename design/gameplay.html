@@ -1,0 +1,161 @@
+<html>
+<head>
+<title>Chicken Little - Design Document</title>
+<LINK REL="STYLESHEET" TYPE="text/css" HREF="style.css">
+</head>
+<body bgcolor="white">
+
+<h1>Chicken Little</h1>
+<h2>Design Document</h2>
+
+<h3>Revision History</h3>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+	<td valign=top nowrap>Jul 23, 2000</td>
+	<td>&nbsp;&nbsp;&nbsp;</td>
+	<td valign=top>initial revision</td>
+</tr>
+<tr>
+	<td valign=top nowrap>Aug 8, 2000</td>
+	<td>&nbsp;&nbsp;&nbsp;</td>
+	<td valign=top>Integrated portions of Jake's document, and added a few new ideas under 'brain storming'</td>
+</tr>
+<tr>
+	<td valign=top nowrap>Aug 16, 2000</td>
+	<td>&nbsp;&nbsp;&nbsp;</td>
+	<td valign=top>Clean up and minor modifications.</td>
+</tr>
+<tr>
+	<td valign=top nowrap>Aug 25, 2000</td>
+	<td>&nbsp;&nbsp;&nbsp;</td>
+	<td valign=top>Split game play up into several pages. This page is just whatever was left, will work on it more.</td>
+</tr>
+<tr>
+	<td valign=top nowrap>Aug 27, 2000</td>
+	<td>&nbsp;&nbsp;&nbsp;</td>
+	<td valign=top>Overview written. Broke off more separate pages.</td>
+</tr>
+<tr>
+	<td valign=top nowrap>Oct 7, 2000</td>
+	<td>&nbsp;&nbsp;&nbsp;</td>
+	<td valign=top>Scoring. Drop indicator.</td>
+</tr>
+</table>
+
+<h3>Game play</h3>
+
+<p><FONT color=red>Note:</FONT> The following sections may be modified after play testing to see how various game pieces and events will affect overall game balance.</P>
+
+<h4>Overview</h4>
+
+<p>The game is played in a rectangular playing area. Eggs of various colors fall from the top of the screen and can be positioned by using the left/right keys. The eggs fall in groups of two, each of which is a random color. You can rotate the eggs clockwise or counter-clockwise in 90&deg; increments.
+
+<p><FONT color=red>Detail</FONT>: Rotating around the primary egg will not rotate the eggs themselves, it only changes the relative positioning.
+
+<p>You lose when the playing area is filled to a point that no more eggs can fall. To prevent this from happening, you must position eggs of the same color together. When four or more like-colored eggs are placed adjacently to each other (horizontally or vertically), the <i>set</i> of eggs will disappear. This is called a <i>match</i>.
+
+<p>If game pieces exist above where the match was, gravity will force those pieces down to fill the hole left by the disappearing match. Doing so could cause additional matches, which will also be removed. Sequential matches are termed <i>combos</i>, and achieving them is an important part of the game.
+
+<p>It is also possible to attain multiple matches at the exact same time. Because the eggs fall in groups of two, one of the eggs could connect with three of one color and the other could connect with three of it's color. This is considered a <i>double set</i> and is not as beneficial as achieving a combo. Due to wildcard pieces and special events, triple sets and quadruple sets (and so on) are also possible.
+
+<p>Some special pieces will fall individually instead of in pairs. It is possible that pieces will be <i>dumped</i> on you at random positions without an opportunity to move them. There are also a number of <a href="events.html">special events</a>, which can be triggered in various ways.
+
+<h4>Winning</h4>
+
+<p>Every level is played one on one, whether two players or vs. the computer. When your opponent loses, you win. To outlast your opponent you must play smarter, achieving more matches in the same amount of time and keeping your playing area from filling up.
+
+<p>It is also possible to win earlier on by achieving certain objectives, which could vary from removing so many eggs, so many eggs of a certain color, or attaining a specific number of matches or combos. Such options should make multi-player games just that much more interesting.
+
+<h4>Game play mechanics</h4>
+
+<p>When you attain a match, double set or combo, you rain chaos on your opponent. The rules for what chaos is caused is as follows:
+
+<p>A match of four eggs disappears but does nothing more happens. A match of 5 or 6 drops a stone on your opponent in a random location. A match of 7, 8 or 9 drops two adjacent stones. A match of ten or more drops an four stones, two adjacent stones in one location and two in another (possibly stacked).
+
+<p>A combo of two successive matches dumps a row of random eggs (not including rare white eggs) on your opponent. For a combo of three successive matches, two rows are dumped. <i>Four</i> or more matches drops three rows.
+
+<p>A double set drops two adjacent eggs on your opponent. A triple set drops four, and a quadruple set (or more) drops a full row.
+
+<p>Note: random eggs that are dropped could cause matches for your opponent.
+
+<p>Perfect matches of textured eggs trigger special events against your opponent (explained in greater detail under <a href="pieces.html">game pieces</a>).
+
+<h4>Drop indicator</h4>
+
+<p>When a player acheives a combination or large match, birdies will fly from the hatched eggs to the top of the opponents playing area. They will rest here as indicators that something is about to drop on that playing area. When the attack falls, the birds flutter off. The number of birds will indicate how many pieces are going to be dropped.
+
+<h4>Scoring</h4>
+
+<p>A match scores 25 points per egg. Combos score additional bonus points, depending on the number of matches and eggs in the matches. The following formula is used, where ComboCount is the number of matches minus one (2 successive matches is a combo of 1). EggCount is a running total of the number eggs in the match and previous matches in the combo. The formula is applied on each successive match in a combo.
+
+<p>(300 * ComboCount * (ComboCount + EggCount)) + (25 * EggCount)
+
+<p>An additional bonus is reward for "perfect matches", using the formula: (750 * PerfectEggCount). PerfectEggCount is the number of Chaos eggs that are perfectly matched. This bonus is rewarded for each match containing a chaos egg set.
+
+<p>Examples: 
+
+<p><table cellpadding=0 cellspacing=0 border=0>
+<tr>
+	<td valign=top>Match of 4</td>
+	<td>&nbsp;&nbsp;&nbsp;</td>
+	<td valign=top>100 pts</td>
+</tr>
+<tr>
+	<td valign=top>Match of 5</td>
+	<td>&nbsp;&nbsp;&nbsp;</td>
+	<td valign=top>125 pts</td>
+</tr>
+<tr>
+	<td valign=top>2 matches of 4 (at the same time)</td>
+	<td>&nbsp;&nbsp;&nbsp;</td>
+	<td valign=top>200 pts</td>
+</tr>
+<tr>
+	<td valign=top>A combo (4 and 4)</td>
+	<td>&nbsp;&nbsp;&nbsp;</td>
+	<td valign=top>200 + 2900 pts</td>
+</tr>
+<tr>
+	<td valign=top>Triple combo (4 and 4 and 4)</td>
+	<td>&nbsp;&nbsp;&nbsp;</td>
+	<td valign=top>200 + 2900 + 8700 pts</td>
+</tr>
+<tr>
+	<td valign=top>A combo (5 and 4)</td>
+	<td>&nbsp;&nbsp;&nbsp;</td>
+	<td valign=top>125 + 3225 pts</td>
+</tr>
+<tr>
+	<td valign=top>A perfect match (4 eggs)</td>
+	<td>&nbsp;&nbsp;&nbsp;</td>
+	<td valign=top>100 + 3000 pts</td>
+</tr>
+<tr>
+	<td valign=top>A combo (perfect match of 5, match of 4)</td>
+	<td>&nbsp;&nbsp;&nbsp;</td>
+	<td valign=top>(125 + 3750) + 3225 pts</td>
+</tr>
+</table>
+
+<h4>Difficulty</h4>
+
+<p>There are several ways to modify the difficulty of game play. Some may be options or related to a selected difficulty level, while others are related to level advancement (including re-starting on the first level after passing the game once).
+
+<ul>
+<li>Increased speed. 
+<li>More challenging/devious AI opponents.
+<li>Portion of playing area randomly filled with eggs at start.
+<li>Disabling the next piece display.
+<li>Grid overlay to assist in alignment.
+</ul>
+
+<p><a href="index.html">Front</a> | <a href="index.html">Previous</A> | <a href="pieces.html">Next</a></p>
+
+</body>
+</html>
+
+
+
+
+

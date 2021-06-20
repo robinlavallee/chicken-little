@@ -1,0 +1,68 @@
+<html>
+<head>
+<title>Chicken Little - Design Document</title>
+<LINK REL="STYLESHEET" TYPE="text/css" HREF="style.css">
+</head>
+<body bgcolor="white">
+
+<h1>Chicken Little</h1>
+<h2>Design Document</h2>
+
+<h3>Revision History</h3>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+	<td valign=top nowrap>Aug 25, 2000</td>
+	<td>&nbsp;&nbsp;&nbsp;</td>
+	<td valign=top>Initial revision.</td>
+</tr>
+</table>
+
+<h3>Special events</h3>
+
+<p>There are two types of events. Good events caused by opening a treasure chest. And chaos events that create havoc for your opponent, which can be triggered randomly (on both players) or by achieving a perfect match of textured eggs.
+
+<p><font color=red>Detail</font>: If multiple events are triggered, they will be queued up and executed in the order triggered.
+
+<h4>Ice storm</h4>
+
+<p>Hail pounds your opponent, freezing the topmost layer of game pieces.</p>
+
+<p>While frozen, eggs cannot be used to achieve matches. However the eggs will thaw over time (in seconds). Once the ice melts, it's possible that one or more matches is caused with recently placed eggs.
+
+<p>Frozen game pieces have an anti-gravity affect as well. Achieving a match below the frozen eggs does not cause them to drop.
+
+<h4>Fireball</h4>
+
+<p>A fireball shoots through a row of pieces, replacing any eggs in it's path with inert meteor pieces. The fireball will destroy stones, but a stone will also stop the fireball from continuing in it's path. Treasure chests are not destroyed by the fire.
+
+<p>The row that the fireball takes out is random and can't be controlled, but it is generally in the lower region of the playing field.</p>
+
+<p>Any frozen pieces directly above or below the fireball are melted by the flame.</p>
+
+<h4>Quake</h4>
+
+<p>The ground opens up and swallows a column of game pieces. The column that is removed is random, and could remove your opponents treasure chest.</p>
+
+<h4>Gold nugget</h4>
+
+<p>Awards you with 100,000 points. Yippie!</p>
+
+<h4>Horseshoe</h4>
+
+<p>Thirty seconds of luck. All falling eggs are pairs of the same color. Increased chance of receiving rare white eggs.</p>
+
+<p>Ducky Lucky is hard-coded to get this bonus in story mode (if he gets his chest open). Your treasure chest is random.</p>
+
+<h4>Paint brush</h4>
+
+<p>All eggs are painted the same color and removed from your playing field. Opponent is pummeled by stones according to the size of the match. Any frozen eggs or stones remain in your playing field unchanged except for gravity's affect.
+
+<p>Scoring is based on the size of the match.
+
+<p></p>
+
+<p><a href="index.html">Front</a> | <a href="pieces.html">Previous</A> | <a href="characters.html">Next</a></p>
+
+</body>
+</html>

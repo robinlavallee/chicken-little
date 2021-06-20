@@ -1,0 +1,25 @@
+BODY, P, TD {
+	font-family : Verdana, Arial, Helvetica, sans-serif;
+}
+
+A:LINK {
+	color : Navy;
+	text-decoration : none;
+}
+
+A:VISITED {
+	color : #993399;
+	text-decoration : none;
+}
+
+A:HOVER {
+	color : Yellow;
+	text-decoration : none;
+	background-color : Navy;
+}
+
+A.external:HOVER {
+	color : Yellow;
+	text-decoration : none;
+	background-color : Maroon;
+}

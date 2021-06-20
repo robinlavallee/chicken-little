@@ -1,0 +1,126 @@
+<html>
+<head>
+<title>Chicken Little - Design Document</title>
+<LINK REL="STYLESHEET" TYPE="text/css" HREF="style.css">
+</head>
+<body bgcolor="white">
+
+<h1>Chicken Little</h1>
+<h2>Design Document</h2>
+
+<h3>Revision History</h3>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+	<td valign=top nowrap>Jul 23, 2000</td>
+	<td>&nbsp;&nbsp;&nbsp;</td>
+	<td valign=top>initial revision</td>
+</tr>
+<tr>
+	<td valign=top nowrap>Aug 8, 2000</td>
+	<td>&nbsp;&nbsp;&nbsp;</td>
+	<td valign=top>Evaluated Puyo Puyo and Baku Baku</td>
+</tr>
+<tr>
+	<td valign=top nowrap>Aug 25, 2000</td>
+	<td>&nbsp;&nbsp;&nbsp;</td>
+	<td valign=top>Jake's evaluation of Magical Drop 3 added.</td>
+</tr>
+</table>
+
+<h3>Critical Evaluation</h3>
+
+<p>It is important to see what games are already out there, what they are doing right or not-so-right. This section attempts to do this for some games similar to our own.
+
+<h4>Super Puyo Puyo</h4>
+
+<img src="puyo.gif" width="320" height="240" alt="" border="0" align=right hspace=8>
+Puyo Puyo is a Japanese puzzle game where you must match falling 'slimes' to remove them. There are 5 different colors: green, blue, yellow, purple and red, plus a transparent nasty slime that gets dropped on you when your opponent makes a combo.
+
+<p>Two randomly colored slimes fall at a time, which are linked together. One has a blinking outline, which the other slime rotates about. The slimes land and 'jiggle' into place, after which joins between like colored slimes (either horizontally or vertically) are shown.
+
+<p>When four or more slimes of the same color are beside each other, they blink and than burst into a colorful display, removing them from the playing field.
+
+<p>Gravity takes affect, causing pieces to fall down and possibly create more matches. When 2 or more matches are created one after another, it is consider a combo, which rains down nasty transparent slimes on the other player.
+
+<p>The transparent slimes disappear when a nearby match is made.
+
+<p>The objective isn't to attain a set number of matches, but instead to outlast your opponent. Whoever fills the playing area first loses.
+
+<br clear=all>
+
+<h4>Baku Baku Animal</h4>
+
+<img src="baku.gif" width="322" height="261" alt="" border="0" align=right hspace=8>
+
+Baku Baku is quite similar to Puyo Puyo, but instead of slimes it uses animals and their favorite foods. When a animal is near it's corresponding food of choice, it gobbles up the food with a lively animation and then goes off the screen.
+
+<p>Baku doesn't have many of the visual cues that Puyo Puyo does, such as indicating which piece orbits which piece, or showing potential joins. Combos work in a similar fashion, but drop a random selection of standard pieces on the opponents playing field vs. the special transparent pieces in Puyo Puyo.
+
+<p>There is one special piece in Baku Baku. The BB Coins will remove all pieces of the same type from the playing field. So if you drop it onto a bone piece, all bones will be removed, not just the connected ones.
+
+<br clear=all>
+
+<h4>Magical Drop 3</h4>
+
+<p><img src="mj3-00.jpg" width="320" height="240" alt="" border="0" align=right hspace=8>The Magical Drop series adds a few new twists to this genre of puzzle game
+by implementing a top-down style of gameplay similar to the more well-known
+Bust-A-Move (Puzzle Bobble).  In addition, you are not given pieces to place,
+rather you must reorganize the pieces on the screen.  Three pieces which are
+placed together in a vertical line will 'detonate' and will subsequently
+detonate any adjacent (non-diagonal) pieces of the same color.  After a match
+detonates, reverse gravity causes pieces to fall upwards and fill in the gaps,
+potentially creating more matches (combos).  As the game progresses,
+additional lines of random pieces are pushed onto the stack from the top,
+forcing the rest of the playing field down.  When it fills up... game over.
+
+<p>There are three modes of play featured.  The first two are typical puzzle game
+material: Survival Mode and Head to Head.  The third is a board game style of
+play, where your goal is to get special pieces which appear
+at random during each stage.  Th more pieces you get, the more spaces you advance
+on the board.
+
+<br clear=all>
+<p><img src="mj3-01.jpg" width="320" height="240" alt="" border="0" align=right hspace=8>Game play mechanics:
+
+<p>There are two buttons: one for grabbing pieces and one for releasing them.
+The player can grab any number of a single color and hold then until he hits
+the other button to release them.  Sequentially completing a series
+of matches (a combo) results in big bonuses with respect to the goal of the
+mode of play.
+
+<p>In addition, there are a number of special pieces.  Some are obstacles
+which require combos or adjacent matches to remove.  Others are bonus pieces
+which can cause a huge 'match' for all the pieces of that color.  There are
+also wildcard pieces which will match up with any color.
+
+<p>Notes:
+
+<ul>
+<li>The board game mode of Magical Drop tends to be too difficult. I repeatedly
+would get stages where I was simply unable to do anything due to way too many
+obstacle pieces, and had to lose a space and try again.
+<li>The 'real-time' game play is fast and furious; it is more reliant on quick
+fingers than its cousins Columns/puyo-puyo/tetris.  For this reason it tends
+to be my personal favorite or all the puzzle games I have played.
+</ul>
+
+<br clear=all>
+
+<h4>Not yet evaluated</h4>
+
+<ul>
+<li>Dr. Mario
+<li>Tetris
+<li>Drak
+<li>Puzzle Master
+<li>Bust A Move
+<li>Brix
+<li>Puzzle Fighter
+<li>Dr. Robotnik's Mean Bean Machine
+</ul>
+
+<p><a href="index.html">Front</a> | <a href="layout.html">Previous</A> | <a href="targets.html">Next</a></p>
+
+</body>
+</html>

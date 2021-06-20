@@ -1,0 +1,70 @@
+<html>
+<head>
+<title>Chicken Little - Design Document</title>
+<LINK REL="STYLESHEET" TYPE="text/css" HREF="style.css">
+</head>
+<body bgcolor="white">
+
+<h1>Chicken Little</h1>
+<h2>Design Document</h2>
+
+<h3>Revision History</h3>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+	<td valign=top nowrap>Aug 25, 2000</td>
+	<td>&nbsp;&nbsp;&nbsp;</td>
+	<td valign=top>Special pieces determined and documented.</td>
+</tr>
+<tr>
+	<td valign=top nowrap>Oct 7, 2000</td>
+	<td>&nbsp;&nbsp;&nbsp;</td>
+	<td valign=top>Meteor object added.</td>
+</tr>
+</table>
+
+<h3>Game pieces</h3>
+
+<h4>Colored eggs</h4>
+
+<p>The core game pieces will be four colored eggs. The eggs are shaped slightly differently to help distinguish them beyond just color. The human eye recognizes different shapes before realizing the color, any hints we can give would be helpful.
+
+<h4>Chaos eggs</h4>
+
+<p>These dark eggs have a secondary color that is either red, blue or green. Achieving a match on the primary color alone acts just like a match with the standard colored eggs.</p>
+
+<p>Getting a "perfect match" where the secondary and primary colors match unlocks <a href="events.html">special events</a>. A perfect match means 4 or more adjoined eggs have the same primary and secondary colors, even if there are more chaos eggs in the entire match.</p>
+
+<p>The red, blue and green secondary colors reflect the three events they cause: fireball, ice storm, and quake respectively. <!-- The pattern of the the textured eggs should reflect the event in some way, such as wavy blue lines for raining down ice on your opponent. -->
+
+<p><font color=red>Detail</font>: Multiple special events will be queued and executed in the order they are matched.
+
+<h4>Rare white eggs</h4>
+
+<p>Single white eggs act as wildcards that match with any colored eggs, causing multiple matches if placed adjacent to 3 or more eggs of one color, and 3 or more eggs of another color. Would not create a match of "blue blue white red" as if the white egg was blue or red, there still would not be 4 or more eggs of the same color.</p>
+
+<p><font color=red>Detail</font>: Do white eggs match both primary and secondary colors of textured eggs, or just the primary color?</p>
+
+<h4>Stone</h4>
+
+<p>Occasionally a stone may fall into your playing area. This could be caused by your opponent matching more than 4 eggs of the same color, or it could occur randomly. You have no control over it's movement. Also, some puzzles may start with one or more stone pieces on the ground.</p>
+
+<p>A stone crumbles as more weight is placed on it. Once four pieces are above the stone, it will collapse, causing the above pieces to fall.</p>
+
+<h4>Meteor</h4>
+
+<p>The meteor is an inert piece ('dud') that cannot be removed except by a neighboring match. When a match occurs, all meteor pieces neighboring the match (horizontally or vertically) will burst and be removed.</p>
+
+<h4>Treasure chest</h4>
+
+<p>The chest is a special piece that never falls on the playing field, rather it is present from the start of the level. After a fixed number of combos/matches are achieved, the chest will open causing a random <a href="events.html">special event</a>. <!-- The chest will be color coded to the combos or matches graph, and the graphs will indicate at what point the chest will open (with a yellow line). -->
+
+<p><a href="index.html">Front</a> | <a href="gameplay.html">Previous</A> | <a href="events.html">Next</a></p>
+
+</body>
+</html>
+
+
+
+
+

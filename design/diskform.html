@@ -1,0 +1,189 @@
+<html>
+<head>
+<title>Chicken Little - Design Document</title>
+<LINK REL="STYLESHEET" TYPE="text/css" HREF="style.css">
+</head>
+<body bgcolor="white">
+
+<h1>Chicken Little</h1>
+<h2>Design Document</h2>
+
+<h3>Revision History</h3>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+	<td valign=top nowrap>Sep 27, 2000</td>
+	<td>&nbsp;&nbsp;&nbsp;</td>
+	<td valign=top>Added Jake's resource format to appendix.</td>
+</tr>
+<tr>
+	<td valign=top nowrap>Oct 7, 2000</td>
+	<td>&nbsp;&nbsp;&nbsp;</td>
+	<td valign=top>Converted to HTML</td>
+</tr>
+</table>
+
+<h3>Appendix A: Resource file formats</h3>
+
+<p><font color="red">Note:</font> All data entries are Intel (little endian) double-word values (4 bytes) unless otherwise specified.  However, you'll notice, it isn't ever otherwise specified!  
+
+<h4>Graphics Resource Pack</h4>
+
+<p>There are two files which make up the graphics resource pack:
+
+<ul>
+<li>The resource headers (which are nearly a direct dump of vdriver's 'SPRITE'
+    structure)
+<li>The bitmap data.
+</ul>
+
+<p>Multiple resources can reference the same bitmap, which allows us to change char-
+acteristics of that bitmap such as its opacity and gamma.
+
+<p>The Bitmap data
+
+<p>The bitmap data file is constructed as such, with a count which indicates the
+total number of bitmaps in the file and a list of seek positions for each of 
+those bitmaps:
+
+<pre>
+ (unsigned) count
+
+ repeat count:
+    (unsigned) SeekPos
+        The seek position of the bitmap data
+ end repeat
+</pre>
+
+<p>The sprite headers
+<pre>
+ (unsigned) Flags
+    These describe the format of the bitmap data on-disk.
+
+        SPR_TRANSPARENT   (1&lt;&lt;0)
+        SPR_OPAQUE        (1&lt;&lt;1)
+        SPR_FUNKY         (1&lt;&lt;2)     // RLE compression of transparency
+
+ (unsigned) AlphaFlags
+    The alpha blending mode flags for this sprite.  These affect how the game
+    loads the sprite data, since certaint flags require certain restrictions
+    on the sampledata format!
+
+        SPRA_ADDITIVE      (1&lt;&lt;1)    // Additive blending (src + dest)
+        SPRA_ALPHA         (1&lt;&lt;2)    // Use the global alpha setting (spr->alpha)
+        SPRA_ALPHA_MASK    (1&lt;&lt;3)    // Use an alpha mask (either spr->alpha_mask or stored in the pixel format).
+        SPRA_GAMMA         (1&lt;&lt;5)    // Source gamma control (spr->gamma)
+
+ (unsigned) xsize
+ (unsigned) ysize
+    Width and height of the bitmap.  Currently this is required to match the
+    characteristics of the bitmap data, but I will change that later.
+
+ (unsigned) Alpha
+    Default global alpha-blending value.
+    Range: 0 to 128
+
+ (unsigned) Gamma
+    Default global gamma (brightness)
+    Range: 0 to 128
+
+ (unsigned) Reserved
+
+ (unsigned) BitmapIndex
+    Index into the bitmap data (see above).
+</pre>
+
+<h4>Audio Resource Pack</h4>
+
+<p>Key Features:
+<ul>
+<li>Allows the use of 'shared samples' by the modules.
+</ul>
+
+<p>The audio resource pack consists of three files:
+<ul>
+<li>Sound effects (sample) resource headers
+<li>Module resource headers
+<li>Sample data
+</ul>
+
+<p>All sample data for the entire game has been packed into one file.  This allows the
+music to reference any sample in the game as a musical instrument, and completely
+eliminates the need for duplicate samples.
+
+<p>The Sample Data
+
+<p>The head of the sample data file contains a count and then a list of indexes and
+flags, as such:
+<pre>
+ (unsigned) count
+
+ repeat count:
+    (unsigned) SeekPos
+       The seek position of the sampledata.
+
+    (unsigned) Sample Format
+       The format of the data, using these flags:
+
+       SF_16BITS           (1&lt;&lt;0)
+       SF_STEREO           (1&lt;&lt;1)
+       SF_SIGNED           (1&lt;&lt;2)
+       SF_DELTA            (1&lt;&lt;3)
+       SF_BIG_ENDIAN       (1&lt;&lt;4)
+ end repeat
+</pre>
+
+<p>The Sample Header
+<pre>
+ (unsigned) Speed
+    The default replay speed of this sample.  Usually this matches the samplerate
+    of the sampledata as it was recorded.
+  
+ (unsigned) Volume
+    Default volume
+    Range: 0 - 128
+
+ (signed)   Panning
+    Default stereo-panning.
+    Range: -128 (left) to 128 (right)
+
+ (unsigned) Length
+    Length of the sample, in *SAMPLES*.  This means that to know the length of
+    the sample in bytes, you have to multiply the length by 2 if either SF_STEREO
+    or SF_16BITS is set in the sampledata's format flags.
+
+ (unsigned) RepPos
+    Starting position of the sample loop (in *samples*)
+
+ (unsigned) RepEnd
+    Ending position of the sample loop (in *samples*)
+
+ (unsigned) SusPos
+    Starting position of the sustain loop (in *samples*)
+
+ (unsigned) SusEnd
+    Starting position of the sustain loop (in *samples*)
+
+ (unsigned) Flags
+    Sample flags.  These are sample looping flags, plus other non-format related
+    stuff.  These are set as follows:
+
+       SL_LOOP             (1&lt;&lt;0)
+       SL_BIDI             (1&lt;&lt;1)
+       SL_REVERSE          (1&lt;&lt;2)
+       SL_SUSTAIN_LOOP     (1&lt;&lt;3)
+       SL_SUSTAIN_BIDI     (1&lt;&lt;4)
+       SL_SUSTAIN_REVERSE  (1&lt;&lt;5)
+
+ (unsigned) SampleDataIndex
+    The index of the sampledata in the sampledata file (see above).
+</pre>	
+<p><a href="index.html">Front</a> | <a href="twit.html">Previous</A> | Next</p>
+
+</body>
+</html>
+
+
+
+	
+	
