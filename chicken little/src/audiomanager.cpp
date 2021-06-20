@@ -101,7 +101,18 @@ void AudioManager::StopMusic(int musicHandle) {
 
 // Implement me
 bool AudioManager::FreeMusic(int musicHandle) {
-  //assert(false);
+  auto it = m_musics.find(musicHandle - 1);
+  if (it != m_musics.end()) {
+    auto& audio = (*it).second;
+
+    audio.m_musicStreamer->destroy();
+    audio.m_musicStreamer.reset();
+    audio.m_musicVoice.reset();
+    m_musics.erase(it);
+
+    return true;
+  }
+  
   return false;
 }
 

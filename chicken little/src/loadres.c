@@ -211,6 +211,12 @@ extern void Portrait_LoadResources(CL_RES *respak);
 
     if(music.title) XAudioMusic_Free(music.title);
 
+    if (music.stage[0])
+      XAudioMusic_Free(music.stage[0]);
+
+    if (music.stage[1])
+      XAudioMusic_Free(music.stage[1]);
+
     if(font.big)    font.big->free(font.big);
     if(font.little) font.little->free(font.little);
     if(font.score)  font.score->free(font.score);
