@@ -17,3 +17,19 @@ bool XAudioBuffer_Free(int bufferHandle) {
 void XAudioBuffer_Play(int bufferHandle) {
   audioManager.PlayBuffer(bufferHandle);
 }
+
+int XAudioMusic_Load(const char* filename) {
+  return audioManager.LoadMusic(filename);
+}
+
+bool XAudioMusic_Free(int musicHandle) {
+  return audioManager.FreeMusic(musicHandle);
+}
+
+void XAudioMusic_Play(int musicHandle) {
+  audioManager.PlayMusic(musicHandle);
+}
+
+void XAudioMusic_Stop(int musicHandle) {
+  // implement me
+}

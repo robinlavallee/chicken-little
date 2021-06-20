@@ -50,6 +50,12 @@ HRESULT XSourceVoice::play(const XAudioBuffer& xAudioBuffer) {
   return hr;
 }
 
+size_t XSourceVoice::getQueuedCount() const {
+  XAUDIO2_VOICE_STATE state;
+  m_sourceVoice->GetState(&state);
+  return state.BuffersQueued;
+}
+
 void XSourceVoice::OnBufferStart(void* pBufferContext) {
   if (!pBufferContext) {
     return;

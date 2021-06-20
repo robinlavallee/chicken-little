@@ -171,7 +171,12 @@
     <ClCompile Include="src\stone.c" />
     <ClCompile Include="src\textinfo.c" />
     <ClCompile Include="src\title.c" />
-    <ClCompile Include="src\XAudioBuffer.cpp" />
+    <ClCompile Include="src\XAudioBuffer.cpp">
+      <LanguageStandard Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">stdcpp17</LanguageStandard>
+    </ClCompile>
+    <ClCompile Include="src\XMusicStreamer.cpp">
+      <LanguageStandard Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">stdcpp17</LanguageStandard>
+    </ClCompile>
     <ClCompile Include="src\XSourceVoice.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -192,6 +197,7 @@
     <ClInclude Include="include\stat.h" />
     <ClInclude Include="include\textinfo.h" />
     <ClInclude Include="include\XAudioBuffer.hpp" />
+    <ClInclude Include="include\XMusicStreamer.hpp" />
     <ClInclude Include="include\XSourceVoice.hpp" />
   </ItemGroup>
   <ItemGroup>

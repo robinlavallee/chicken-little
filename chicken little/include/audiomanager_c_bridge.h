@@ -15,6 +15,17 @@ __EXTERN_C__ bool XAudioBuffer_Free(int);
 // Play an XAudioBuffer through its handle
 __EXTERN_C__ void XAudioBuffer_Play(int);
 
+__EXTERN_C__ int XAudioMusic_Load(const char* filename);
+
+// Play the music given a music HANDLE
+__EXTERN_C__ void XAudioMusic_Play(int musicHandle);
+
+// Stop playing the music given a music HANDLE
+__EXTERN_C__ void XAudioMusic_Stop(int musicHandle);
+
+// Free the music given by HANDLE
+__EXTERN_C__ bool XAudioMusic_Free(int musicHandle);
+
 #undef __EXTERN_C__
 
 #endif // #ifndef __AUDIOMANAGER_C_BRIDGE_H__

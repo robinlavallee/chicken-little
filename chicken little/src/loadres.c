@@ -209,7 +209,7 @@ extern void Portrait_LoadResources(CL_RES *respak);
     
     _mmlogd("Chicken Little > Unloading game resources...");
 
-    if(music.title) Unimod_Free(music.title);
+    if(music.title) XAudioMusic_Free(music.title);
 
     if(font.big)    font.big->free(font.big);
     if(font.little) font.little->free(font.little);

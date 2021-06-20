@@ -93,6 +93,9 @@
     <ClCompile Include="src\audiomanager_c_bridge.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\XMusicStreamer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\ai.h">
@@ -147,6 +150,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\audiomanager_c_bridge.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\XMusicStreamer.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -35,6 +35,21 @@ XAudioBuffer::XAudioBuffer(const std::string& inputFile) {
   m_buffer.pContext = this;
 }
 
+XAudioBuffer::XAudioBuffer(size_t bufferSize) {
+  m_buffer.Flags = 0;
+  m_bytes.resize(bufferSize);
+  m_buffer.AudioBytes = static_cast<UINT32>(m_bytes.size());
+  assert(m_buffer.AudioBytes <= XAUDIO2_MAX_BUFFER_BYTES);
+
+  m_buffer.pAudioData = m_bytes.data();
+  m_buffer.PlayBegin = 0;
+  m_buffer.PlayLength = 0;
+  m_buffer.LoopBegin = 0;
+  m_buffer.LoopLength = 0;
+  m_buffer.LoopCount = 0;
+  m_buffer.pContext = this;
+}
+
 void XAudioBuffer::onBufferStart() {
   m_state = State::STARTED;
 }

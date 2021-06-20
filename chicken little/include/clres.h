@@ -62,8 +62,8 @@
     typedef struct RES_MUSIC
 //======================================================================================
 {
-    UNIMOD   *title;
-    UNIMOD   *stage[2];
+    int   title;
+    int   stage[2];
 
 } RES_MUSIC;
 

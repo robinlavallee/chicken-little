@@ -74,6 +74,27 @@ bool AudioManager::FreeBuffer(int bufferHandle) {
   return true;
 }
 
+int AudioManager::LoadMusic(const std::string& filename) {
+  for (int i = 0; i < m_musics.size(); ++i) {
+    if (m_musics[i].path == filename) {
+      return i + 1;
+    }
+  }
+
+  m_musics.push_back(filename);
+  return m_musics.size();
+}
+
+void AudioManager::PlayMusic(int musicHandle) {
+
+}
+
+// Implement me
+bool AudioManager::FreeMusic(int musicHandle) {
+  //assert(false);
+  return false;
+}
+
 int AudioManager::Shutdown() {
 
   // TODO: Make sure all voices have been stopped before

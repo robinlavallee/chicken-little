@@ -18,6 +18,8 @@ class XSourceVoice : public IXAudio2VoiceCallback {
 
   HRESULT configure(IXAudio2* xAudio2, WAVEFORMATEX wfx);
   HRESULT play(const XAudioBuffer& xAudioBuffer);
+
+  size_t getQueuedCount() const;
  
  protected:
   // IXAudio2VoiceCallback overrides
