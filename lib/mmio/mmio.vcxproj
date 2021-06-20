@@ -9,14 +9,6 @@
       <Configuration>Release</Configuration>
       <Platform>Win32</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="Template|Win32">
-      <Configuration>Template</Configuration>
-      <Platform>Win32</Platform>
-    </ProjectConfiguration>
-    <ProjectConfiguration Include="VectorC|Win32">
-      <Configuration>VectorC</Configuration>
-      <Platform>Win32</Platform>
-    </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <SccProjectName />
@@ -25,16 +17,6 @@
     <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Template|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
-    <PlatformToolset>v141</PlatformToolset>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='VectorC|Win32'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
-    <PlatformToolset>v141</PlatformToolset>
-    <UseOfMfc>false</UseOfMfc>
-    <CharacterSet>MultiByte</CharacterSet>
-  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <PlatformToolset>v142</PlatformToolset>
@@ -49,13 +31,6 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
-  </ImportGroup>
-  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-  </ImportGroup>
-  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='VectorC|Win32'" Label="PropertySheets">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
@@ -76,11 +51,6 @@
     <IntDir>.\Debug\</IntDir>
     <LinkIncremental>true</LinkIncremental>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='VectorC|Win32'">
-    <OutDir>.\Release\</OutDir>
-    <IntDir>.\temp\</IntDir>
-    <LinkIncremental>false</LinkIncremental>
-  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
@@ -91,13 +61,13 @@
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>OldStyle</DebugInformationFormat>
-      <AdditionalIncludeDirectories>$(MMIO)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_LIB;P_INTEL;WIN32;NDEBUG;MM_LOG_VERBOSE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AssemblerListingLocation>.\temp\</AssemblerListingLocation>
       <PrecompiledHeaderOutputFile>.\temp\mmio.pch</PrecompiledHeaderOutputFile>
       <ObjectFileName>.\temp\</ObjectFileName>
       <ProgramDataBaseFileName>.\temp\</ProgramDataBaseFileName>
-      <StructMemberAlignment>4Bytes</StructMemberAlignment>
+      <StructMemberAlignment>Default</StructMemberAlignment>
     </ClCompile>
     <ResourceCompile>
       <Culture>0x0409</Culture>
@@ -143,59 +113,15 @@
       <OutputFile>.\Debug\mmio.lib</OutputFile>
     </Lib>
   </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='VectorC|Win32'">
-    <ClCompile>
-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
-      <StringPooling>true</StringPooling>
-      <FunctionLevelLinking>true</FunctionLevelLinking>
-      <Optimization>MaxSpeed</Optimization>
-      <SuppressStartupBanner>true</SuppressStartupBanner>
-      <WarningLevel>Level2</WarningLevel>
-      <DebugInformationFormat>OldStyle</DebugInformationFormat>
-      <AdditionalIncludeDirectories>$(MMIO)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>NDEBUG;WIN32;_LIB;P_INTEL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AssemblerListingLocation>.\temp\</AssemblerListingLocation>
-      <PrecompiledHeaderOutputFile>.\temp\mmio.pch</PrecompiledHeaderOutputFile>
-      <ObjectFileName>.\temp\</ObjectFileName>
-      <ProgramDataBaseFileName>.\temp\</ProgramDataBaseFileName>
-      <AdditionalOptions> $(VECTORC)</AdditionalOptions>
-    </ClCompile>
-    <ResourceCompile>
-      <Culture>0x0409</Culture>
-      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-    </ResourceCompile>
-    <Bscmake>
-      <SuppressStartupBanner>true</SuppressStartupBanner>
-      <OutputFile>.\Release\mmio.bsc</OutputFile>
-    </Bscmake>
-    <Lib>
-      <SuppressStartupBanner>true</SuppressStartupBanner>
-      <OutputFile>.\Release\mmio.lib</OutputFile>
-    </Lib>
-  </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\loadcfg.c">
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='VectorC|Win32'"> $(VECTORC)  $(VECTORC)</AdditionalOptions>
-    </ClCompile>
-    <ClCompile Include="src\log.c">
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='VectorC|Win32'"> $(VECTORC)  $(VECTORC)</AdditionalOptions>
-    </ClCompile>
-    <ClCompile Include="src\mmalloc.c">
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='VectorC|Win32'"> $(VECTORC)  $(VECTORC)</AdditionalOptions>
-    </ClCompile>
-    <ClCompile Include="src\mmcopy.c">
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='VectorC|Win32'"> $(VECTORC)  $(VECTORC)</AdditionalOptions>
-    </ClCompile>
-    <ClCompile Include="src\mmerror.c">
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='VectorC|Win32'"> $(VECTORC)  $(VECTORC)</AdditionalOptions>
-    </ClCompile>
+    <ClCompile Include="src\loadcfg.c" />
+    <ClCompile Include="src\log.c" />
+    <ClCompile Include="src\mmalloc.c" />
+    <ClCompile Include="src\mmcopy.c" />
+    <ClCompile Include="src\mmerror.c" />
     <ClCompile Include="src\mmio.c">
       <OmitFramePointers Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</OmitFramePointers>
       <InlineFunctionExpansion Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AnySuitable</InlineFunctionExpansion>
-      <OmitFramePointers Condition="'$(Configuration)|$(Platform)'=='VectorC|Win32'">true</OmitFramePointers>
-      <InlineFunctionExpansion Condition="'$(Configuration)|$(Platform)'=='VectorC|Win32'">AnySuitable</InlineFunctionExpansion>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='VectorC|Win32'"> $(VECTORC)  $(VECTORC)</AdditionalOptions>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

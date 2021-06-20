@@ -21,9 +21,6 @@
       <UniqueIdentifier>{7258a050-7373-47c1-9c68-ecaaa59359f5}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl</Extensions>
     </Filter>
-    <Filter Include="Source Files\Virtch\i386">
-      <UniqueIdentifier>{a319ef0c-3be0-4cc9-9c98-79e824cf95a9}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\virtch\asmapi\asmapi.h">
@@ -190,25 +187,5 @@
     <ClCompile Include="src\voiceset.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="src\virtch\i386\res8ss.asm">
-      <Filter>Source Files\Virtch\i386</Filter>
-    </None>
-    <None Include="src\virtch\i386\res16.asm">
-      <Filter>Source Files\Virtch\i386</Filter>
-    </None>
-    <None Include="src\virtch\i386\res16mmx.asm">
-      <Filter>Source Files\Virtch\i386</Filter>
-    </None>
-    <None Include="src\virtch\i386\res16ss.asm">
-      <Filter>Source Files\Virtch\i386</Filter>
-    </None>
-    <None Include="src\virtch\i386\resample.asm">
-      <Filter>Source Files\Virtch\i386</Filter>
-    </None>
-    <None Include="src\virtch\i386\resmmx.asm">
-      <Filter>Source Files\Virtch\i386</Filter>
-    </None>
   </ItemGroup>
 </Project>
