@@ -10,7 +10,7 @@
 // 16 bits signed
 // 44100
 // Stereo or Mono
-// ffplay -f s16le -ar 44100 -ac 2 0.bin
+// ffplay -f s16le -ar 44100 -ac 2 0.wav
 XAudioBuffer::XAudioBuffer(const std::string& inputFile) {
   std::ifstream stream(inputFile, std::ios::in | std::ios::binary);
   stream.unsetf(std::ios::skipws);

@@ -120,7 +120,7 @@
 
 int MDRes_LoadSampleXAudio(MD_RESPAK* res, uint idx) {
   char sample_path[255];
-  sprintf_s(sample_path, sizeof(sample_path), "data/sounds/%d.bin", idx);
+  sprintf_s(sample_path, sizeof(sample_path), "data/sounds/%d.wav", idx);
   return XAudioBuffer_Create(sample_path);
 }
 

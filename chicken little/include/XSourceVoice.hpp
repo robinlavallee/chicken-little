@@ -32,15 +32,7 @@ class XSourceVoice : public IXAudio2VoiceCallback {
  private:
   void release();
  
-  // Currently active voice buffers
-  std::unordered_set<const XAudioBuffer*> m_xBuffers;
-
-  // Voice buffers queued to be removed
-  std::unordered_set<const XAudioBuffer*> m_toRemove;
   std::mutex m_mutex;  // to protect concurrent access m_toRemove
 
   IXAudio2SourceVoice* m_sourceVoice;
-
-  std::thread::id m_threadId;
-
 };

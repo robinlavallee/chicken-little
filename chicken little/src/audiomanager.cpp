@@ -34,7 +34,6 @@ int AudioManager::Init() {
   wfx.nAvgBytesPerSec = wfx.nSamplesPerSec * wfx.wBitsPerSample * wfx.nChannels / 8;
   wfx.cbSize = 0;
 
-  const int MaxVoices = 8;
   m_sourceVoices.resize(MaxVoices);
   for (auto& sourceVoice : m_sourceVoices) {
     sourceVoice = std::make_unique<XSourceVoice>();
@@ -56,8 +55,12 @@ void AudioManager::PlayBuffer(int bufferHandle) {
     return;
   }
 
-  // TODO: Use empty voices
-  m_sourceVoices[0]->play(*(*it).second.get());
+  // TODO: Use empty voices instead of cycling like this
+  static int currentVoice = 0;
+  m_sourceVoices[currentVoice++]->play(*(*it).second.get());
+  if (currentVoice >= MaxVoices) {
+    currentVoice = 0;
+  }
 }
 
 bool AudioManager::FreeBuffer(int bufferHandle) {

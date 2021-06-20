@@ -5,10 +5,10 @@
 #include <algorithm>
 
 XSourceVoice::XSourceVoice()
-    : m_sourceVoice(nullptr), m_threadId(std::this_thread::get_id()) {}
+    : m_sourceVoice(nullptr) {}
 
 XSourceVoice::XSourceVoice(IXAudio2SourceVoice* sourceVoice)
-    : m_sourceVoice(sourceVoice), m_threadId(std::this_thread::get_id()) {}
+    : m_sourceVoice(sourceVoice) {}
 
 XSourceVoice::~XSourceVoice() {
 }

@@ -24,6 +24,8 @@ class AudioManager {
   // Free the buffer given an HANDLE obtained from AddBuffer
   bool FreeBuffer(int bufferHandle);
 
+  const int MaxVoices = 32;
+
  private:
   IXAudio2* m_pXAudio2;
   IXAudio2MasteringVoice* m_pMasterVoice;
