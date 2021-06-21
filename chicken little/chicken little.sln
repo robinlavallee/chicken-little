@@ -7,8 +7,6 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "app", "..\lib\app\app.vcxpr
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "chicken little", "chicken little.vcxproj", "{E1EAF326-1520-44F6-9829-1AB16E112CF6}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mikmod", "..\lib\mikmod\mikmod.vcxproj", "{E989C4E4-7B8D-4C05-9A28-296F0D688E38}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mmio", "..\lib\mmio\mmio.vcxproj", "{A6127C4D-B551-4840-A2A1-B2D030552A7A}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "vdriver", "..\lib\vdriver\vdriver.vcxproj", "{3B17DAC2-DE5E-45E7-9D6A-EB852C90AFE5}"
@@ -37,14 +35,6 @@ Global
 		{E1EAF326-1520-44F6-9829-1AB16E112CF6}.Release|x64.Build.0 = Release|x64
 		{E1EAF326-1520-44F6-9829-1AB16E112CF6}.Release|x86.ActiveCfg = Release|Win32
 		{E1EAF326-1520-44F6-9829-1AB16E112CF6}.Release|x86.Build.0 = Release|Win32
-		{E989C4E4-7B8D-4C05-9A28-296F0D688E38}.Debug|x64.ActiveCfg = Debug|x64
-		{E989C4E4-7B8D-4C05-9A28-296F0D688E38}.Debug|x64.Build.0 = Debug|x64
-		{E989C4E4-7B8D-4C05-9A28-296F0D688E38}.Debug|x86.ActiveCfg = Debug|Win32
-		{E989C4E4-7B8D-4C05-9A28-296F0D688E38}.Debug|x86.Build.0 = Debug|Win32
-		{E989C4E4-7B8D-4C05-9A28-296F0D688E38}.Release|x64.ActiveCfg = Release|x64
-		{E989C4E4-7B8D-4C05-9A28-296F0D688E38}.Release|x64.Build.0 = Release|x64
-		{E989C4E4-7B8D-4C05-9A28-296F0D688E38}.Release|x86.ActiveCfg = Release|Win32
-		{E989C4E4-7B8D-4C05-9A28-296F0D688E38}.Release|x86.Build.0 = Release|Win32
 		{A6127C4D-B551-4840-A2A1-B2D030552A7A}.Debug|x64.ActiveCfg = Debug|x64
 		{A6127C4D-B551-4840-A2A1-B2D030552A7A}.Debug|x64.Build.0 = Debug|x64
 		{A6127C4D-B551-4840-A2A1-B2D030552A7A}.Debug|x86.ActiveCfg = Debug|Win32

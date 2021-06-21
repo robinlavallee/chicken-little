@@ -15,7 +15,6 @@
 */
 
 #include "chicken.h"
-#include "mikmod.h"
 #include "audiomanager_c_bridge.h"
 
 

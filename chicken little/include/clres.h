@@ -10,9 +10,7 @@
 #include "vdrespak.h"
 #include "animation.h"
 
-#include "mikmod.h"
 #include "audiomanager_c_bridge.h"
-#include "uniform.h"
 
 #include "vdfont.h"
 
@@ -36,11 +34,8 @@
     uint        numsamp;
     int        *bitmap;
 
-    MDRIVER    *md;
-    
     uint        header_alloc;
     uint        numhead;
-    MD_SAMPLE **header;
 } MD_RESPAK;
 
 
@@ -108,17 +103,16 @@
 
 extern BOOL      CL_LoadResources(struct GAMEDATA *chick);
 
-extern void      CL_OpenResource(VD_SURFACE *vs, MDRIVER *md);
+extern void      CL_OpenResource(VD_SURFACE *vs);
 extern void      CL_CloseResource(void);
 
 extern BOOL      CL_LoadAnimation(CL_RES *res, ANIM_SEQUENCE *seq, uint idx, uint count);
 extern void      CL_UnloadAnimation(CL_RES *res, ANIM_STATE *augh);
 
 
-extern MD_RESPAK *MDRes_OpenFN(MDRIVER *md, CHAR *headfn, CHAR *datafn);
+extern MD_RESPAK *MDRes_OpenFN(CHAR *headfn, CHAR *datafn);
 extern BOOL       MDRes_LoadDependencies(MD_RESPAK *res);
-extern BOOL       MDRes_ReloadResources(MD_RESPAK *res, MDRIVER *md);
-extern MD_SAMPLE *MDRes_LoadSample(MD_RESPAK *res, uint idx);
+extern BOOL       MDRes_ReloadResources(MD_RESPAK *res);
 extern int MDRes_LoadSampleXAudio(MD_RESPAK *res, uint idx);
 extern void       MDRes_Close(MD_RESPAK *res);
 

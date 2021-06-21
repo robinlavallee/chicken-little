@@ -15,8 +15,6 @@
 
 #include <string.h>
 
-#include "uniform.h"
-#include "mplayer.h"
 
 CL_RES    *respak = NULL;           // current resource pak we load stuff from
 
@@ -169,7 +167,7 @@ extern void Portrait_LoadResources(CL_RES *respak);
 
 
 // =====================================================================================
-    void CL_OpenResource(VD_SURFACE *vs, MDRIVER *md)
+    void CL_OpenResource(VD_SURFACE *vs)
 // =====================================================================================
 // Creates a handle for accessing resources.
 {
@@ -183,7 +181,7 @@ extern void Portrait_LoadResources(CL_RES *respak);
     respak->videopak = VDRes_OpenFN(vs, "gamegfx.idx", "gamegfx.dat");
     if(!respak->videopak) return;
 
-    respak->audiopak = MDRes_OpenFN(md, "gamesfx.idx", "gamesfx.dat");
+    respak->audiopak = MDRes_OpenFN("gamesfx.idx", "gamesfx.dat");
     if(!respak->audiopak) return;
 
     CLEAR_STRUCT(music);

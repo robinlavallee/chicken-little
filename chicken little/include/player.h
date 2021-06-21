@@ -192,10 +192,6 @@ extern ENTITY Entity_Player;
 
 // player/gamepiece related sound effects!
 
-extern MD_SAMPLE    *sfx_eggcrack, *sfx_eggbreak,
-                    *sfx_birdie1,  *sfx_birdie2;
-
-
 #define PCTRL_STATE_START  PLAYER_STATE_WAITING
 #define PCTRL_STATE_END    PLAYER_STATE_SOLIDIFY
 

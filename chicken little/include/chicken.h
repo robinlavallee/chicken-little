@@ -161,7 +161,6 @@ extern void    DoGameWork(KBDATA *kbd);
     VD_RENDERER  *vr;               // the rendering device object
     VD_SURFACE   *vs;               // pointer to the surface attached to our renderer.
 
-    MDRIVER      *md;
     GAMEOPTIONS  options;           // gameoption
 
 } GAMEDATA;
@@ -173,8 +172,5 @@ extern void    DoGameWork(KBDATA *kbd);
 
 extern void    CL_SetGameState(GAMEDATA *chick, int state);
 extern PLAYER *GetOpponent(PLAYER *p);           // Get the other player
-
-
-extern MD_VOICESET *vs_sndfx;
  
 #endif // _CHICKEN_H_

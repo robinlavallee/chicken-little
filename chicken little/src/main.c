@@ -21,8 +21,6 @@
 #include <windows.h>
 #include "..\resource.h"
 
-#include "uniform.h"
-
 bool g_bFullScreen = false;
 int  WindowX = 100, WindowY = 100;
 
@@ -275,7 +273,6 @@ static KBDATA  kbd;
 // =====================================================================================
 {
     UpdateKeyStatus(&kbd);
-    Mikmod_Update(chicken.md);
 }
 
 
@@ -325,9 +322,6 @@ static KBDATA  kbd;
         return chicken.player[0];
 }
 
-
-MD_VOICESET   *vs_sndfx;
-
 extern void drvDDraw_SetData(HWND handle);
 
 // =====================================================================================
@@ -336,8 +330,6 @@ extern void drvDDraw_SetData(HWND handle);
 {
 	VD_Exit(chicken.vr);
     chicken.vr = NULL;
-    Mikmod_Exit(chicken.md);
-    chicken.md = NULL;
 
     CL_CloseResource();
 
@@ -369,16 +361,6 @@ enum
     CLEAR_STRUCT(chicken);
     CLEAR_STRUCT(kbd);
     
-    Mikmod_RegisterLoader(load_it);
-    Mikmod_RegisterLoader(load_xm);
-
-	Mikmod_RegisterDriver(drv_ds);
-	chicken.md = Mikmod_Init(22050, 60, NULL, MD_STEREO, CPU_NONE, 
-		DMODE_16BITS | DMODE_INTERP | DMODE_NOCLICK);
-
-    vs_sndfx = Voiceset_Create(chicken.md, NULL, 8, 0);
-    Voiceset_SetVolume(vs_sndfx, 384);
-
     // Initialize VDRIVER Studly stuff
     // ===============================
 
@@ -391,7 +373,7 @@ enum
     // Open the Chicken Little Resource Files
     // ======================================
 
-    CL_OpenResource(chicken.vs, chicken.md);
+    CL_OpenResource(chicken.vs);
 
     if(!respak)
     {   _mmlog("Chicken Little > Cannot find graphics resource files!  Terminating...");

@@ -5,8 +5,6 @@
 
 #include <windows.h>
 #include "assert.h"
-#include "mplayer.h"
-
 
 extern GAMEDATA chicken;
 

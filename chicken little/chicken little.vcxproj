@@ -339,10 +339,6 @@
       <Project>{7964a960-4a2b-4817-9da6-39340c6b55ad}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
-    <ProjectReference Include="..\lib\mikmod\mikmod.vcxproj">
-      <Project>{e989c4e4-7b8d-4c05-9a28-296f0d688e38}</Project>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
     <ProjectReference Include="..\lib\mmio\mmio.vcxproj">
       <Project>{a6127c4d-b551-4840-a2a1-b2d030552a7a}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
