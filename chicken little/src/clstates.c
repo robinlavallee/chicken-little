@@ -38,10 +38,10 @@ SELECTION selset_mainmenu[MMENU_NUMSEL] =
     /*{   174,276-35, 0, NULL,
         "Options"   },*/
 
-    {   174, 280, 0, NULL,
+    {   174, 276, 0, NULL,
         "Single" },
 
-    {   260,352-35, 0, NULL,
+    {   260,362, 0, NULL,
         "Quit"      }
 };
 
@@ -738,7 +738,7 @@ extern void Match_Renderer(void);
 
             {
                 TEXTINFO *text;
-                text = TextInfo_Initialize(&chick->entitylist, "Gratisgames", 88, 172, font.big);
+                text = TextInfo_Initialize(&chick->entitylist, "Guibec", 190, 172, font.big);
                 text->entity.timeout = 1150;
                 text = TextInfo_Initialize(&chick->entitylist, "Presents", 148, 226, font.big);
                 text->entity.timeout = 1150;
